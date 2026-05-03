@@ -1240,160 +1240,69 @@
       messages.scrollTop = messages.scrollHeight;
     }
 
+    let conversationHistory = [];
+    let isLoadingMessage = false;
+
     function sendMessage() {
       const text = chatInput.value.trim();
-      if (!text) return;
+      if (!text || isLoadingMessage) return;
 
       addMessage(text, true);
       chatInput.value = '';
-      handleResponse(text);
+
+      // Add user message to conversation history
+      conversationHistory.push({
+        role: 'user',
+        content: text
+      });
+
+      // Send to Claude API
+      sendToClaudeAPI(conversationHistory);
     }
 
-    function handleResponse(userMessage) {
-      setTimeout(() => {
-        switch(chatState.stage) {
-          case 'greeting':
-            chatState.data.name = userMessage;
-            addMessage(`Great to meet you, ${userMessage}! 👍 What company are you with, or are you working as an individual?`);
-            chatState.stage = 'collecting_company';
-            break;
+    async function sendToClaudeAPI(messages) {
+      isLoadingMessage = true;
+      chatInput.disabled = true;
 
-          case 'collecting_company':
-            chatState.data.company = userMessage;
-            addMessage(`Perfect, ${chatState.data.company}! What's the best email to reach you at?`);
-            chatState.stage = 'collecting_email';
-            break;
+      try {
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ messages })
+        });
 
-          case 'collecting_email':
-            chatState.data.email = userMessage;
-            addMessage(`Got it, ${userMessage}. And what's your phone number? We may need to discuss custom details.`);
-            chatState.stage = 'collecting_phone';
-            break;
-
-          case 'collecting_phone':
-            chatState.data.phone = userMessage;
-            addMessage(`Awesome! Now, what type of promotional products are you most interested in?`);
-            addMessage(
-              '<button onclick="selectOption(\'apparel\')">Custom Apparel</button>' +
-              '<button onclick="selectOption(\'bags\')">Bags</button>' +
-              '<button onclick="selectOption(\'drinkware\')">Drinkware</button>' +
-              '<button onclick="selectOption(\'gifts\')">Corporate Gifts</button>' +
-              '<button onclick="selectOption(\'other\')">Something Else</button>',
-              false,
-              true
-            );
-            chatState.stage = 'collecting_product_type';
-            break;
-
-          case 'collecting_product_type':
-            chatState.data.productType = userMessage;
-            addMessage(`Excellent choice! How many items are you looking to order?`);
-            addMessage(
-              '<button onclick="selectQuantity(\'under50\')">Under 50</button>' +
-              '<button onclick="selectQuantity(\'50-100\')">50-100</button>' +
-              '<button onclick="selectQuantity(\'100-250\')">100-250</button>' +
-              '<button onclick="selectQuantity(\'250-500\')">250-500</button>' +
-              '<button onclick="selectQuantity(\'500plus\')">500+</button>',
-              false,
-              true
-            );
-            chatState.stage = 'collecting_quantity';
-            break;
-
-          case 'collecting_quantity':
-            chatState.data.quantity = userMessage;
-            addMessage(`Perfect! When do you need this order completed?`);
-            addMessage(
-              '<button onclick="selectTimeline(\'asap\')">ASAP</button>' +
-              '<button onclick="selectTimeline(\'1week\')">1 Week</button>' +
-              '<button onclick="selectTimeline(\'2weeks\')">2 Weeks</button>' +
-              '<button onclick="selectTimeline(\'1month\')">1 Month</button>' +
-              '<button onclick="selectTimeline(\'flexible\')">Flexible</button>',
-              false,
-              true
-            );
-            chatState.stage = 'collecting_timeline';
-            break;
-
-          case 'collecting_timeline':
-            chatState.data.timeline = userMessage;
-            addMessage(`Great! Tell me more about your project. What design or message do you want on these items? Any color preferences?`);
-            chatState.stage = 'collecting_description';
-            break;
-
-          case 'collecting_description':
-            chatState.data.description = userMessage;
-            addMessage(`Awesome project! 🎨 What's your budget range for this order?`);
-            chatState.stage = 'collecting_budget';
-            break;
-
-          case 'collecting_budget':
-            chatState.data.budget = userMessage;
-            showOrderSummary();
-            break;
-
-          default:
-            addMessage(`I didn't quite understand that. Can you tell me more about your promotional product needs?`);
+        if (!response.ok) {
+          const error = await response.json();
+          if (error.message && error.message.includes('API key')) {
+            addMessage('⚠️ The chatbot API needs to be configured. Please add your Claude API key to the Vercel environment variables.');
+          } else {
+            addMessage('Sorry, I encountered an error. Please try again or contact us at (423) 756-1144.');
+          }
+          console.error('API Error:', error);
+          return;
         }
-      }, 500);
-    }
 
-    function selectOption(option) {
-      chatState.data.productType = option;
-      addMessage(option.charAt(0).toUpperCase() + option.slice(1), true);
-      addMessage(`Excellent choice! How many items are you looking to order?`);
-      addMessage(
-        '<button onclick="selectQuantity(\'under50\')">Under 50</button>' +
-        '<button onclick="selectQuantity(\'50-100\')">50-100</button>' +
-        '<button onclick="selectQuantity(\'100-250\')">100-250</button>' +
-        '<button onclick="selectQuantity(\'250-500\')">250-500</button>' +
-        '<button onclick="selectQuantity(\'500plus\')">500+</button>',
-        false,
-        true
-      );
-      chatState.stage = 'collecting_quantity';
-    }
+        const data = await response.json();
+        const assistantMessage = data.content;
 
-    function selectQuantity(qty) {
-      chatState.data.quantity = qty;
-      addMessage(qty.replace(/([a-z])([A-Z])/g, '$1 $2'), true);
-      addMessage(`Perfect! When do you need this order completed?`);
-      addMessage(
-        '<button onclick="selectTimeline(\'asap\')">ASAP</button>' +
-        '<button onclick="selectTimeline(\'1week\')">1 Week</button>' +
-        '<button onclick="selectTimeline(\'2weeks\')">2 Weeks</button>' +
-        '<button onclick="selectTimeline(\'1month\')">1 Month</button>' +
-        '<button onclick="selectTimeline(\'flexible\')">Flexible</button>',
-        false,
-        true
-      );
-      chatState.stage = 'collecting_timeline';
-    }
+        // Add assistant response to conversation history
+        conversationHistory.push({
+          role: 'assistant',
+          content: assistantMessage
+        });
 
-    function selectTimeline(timeline) {
-      chatState.data.timeline = timeline;
-      addMessage(timeline.replace(/([a-z])([A-Z])/g, '$1 $2'), true);
-      addMessage(`Great! Tell me more about your project. What design or message do you want on these items? Any color preferences?`);
-      chatState.stage = 'collecting_description';
-    }
-
-    function showOrderSummary() {
-      const summary = `
-        <strong>Order Summary:</strong><br>
-        📝 Name: ${chatState.data.name}<br>
-        🏢 Company: ${chatState.data.company}<br>
-        📧 Email: ${chatState.data.email}<br>
-        📱 Phone: ${chatState.data.phone}<br>
-        🎯 Product: ${chatState.data.productType}<br>
-        📦 Quantity: ${chatState.data.quantity}<br>
-        ⏰ Timeline: ${chatState.data.timeline}<br>
-        💭 Description: ${chatState.data.description}<br>
-        💰 Budget: ${chatState.data.budget}<br><br>
-        <strong>Perfect! Our team will review your order details and send you a personalized quote within 24 hours. We'll discuss customization options, design, and pricing.</strong>
-      `;
-      addMessage(summary);
-      addMessage('📞 You can also call us directly at (423) 756-1144 for immediate assistance!');
-      chatState.stage = 'complete';
+        // Add the assistant's response to the chat
+        addMessage(assistantMessage);
+      } catch (error) {
+        console.error('Error calling Claude API:', error);
+        addMessage('Sorry, I had trouble connecting to the AI service. Please try again or call us at (423) 756-1144.');
+      } finally {
+        isLoadingMessage = false;
+        chatInput.disabled = false;
+        chatInput.focus();
+      }
     }
 
     chatInput.addEventListener('keypress', (e) => {

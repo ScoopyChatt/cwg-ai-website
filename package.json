@@ -7,6 +7,9 @@
     "build": "echo 'Static site - no build needed'",
     "start": "python -m http.server 3000"
   },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.21.0"
+  },
   "keywords": ["cwg", "ai", "website"],
   "author": "",
   "license": "ISC"
