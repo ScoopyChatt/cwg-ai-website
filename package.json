@@ -1,0 +1,13 @@
+{
+  "name": "cwg-ai-website",
+  "version": "1.0.0",
+  "description": "CWG AI Website - AI Lead Capture + Order Assistant",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'Static site - no build needed'",
+    "start": "python -m http.server 3000"
+  },
+  "keywords": ["cwg", "ai", "website"],
+  "author": "",
+  "license": "ISC"
+}

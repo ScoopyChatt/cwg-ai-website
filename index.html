@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CWG AI Website – AI Lead Capture + Order Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0e1b3b;        /* deep navy sections */
+      --blue:#1e5bd8;        /* bright blue accents */
+      --gold:#c59a00;        /* subtle gold highlights */
+      --bg:#f7f8fb;           /* light background */
+      --card:#ffffff;          
+      --shadow:0 8px 24px rgba(20,30,60,.12);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:#0b1020;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto;}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter: saturate(180%) blur(6px);z-index:50}
+    nav{display:flex;gap:28px;align-items:center;max-width:1200px;margin:0 auto;padding:18px 20px}
+    nav a{color:#0a1a3a;font-weight:600;letter-spacing:.2px}
+    .logo{font-weight:800;color:var(--blue);font-size:20px}
+    .spacer{flex:1}
+    .hero{padding:72px 20px 70px;background:linear-gradient(#f9fbff, #fff);}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .grid{display:grid;gap:22px}
+    .grid-3{grid-template-columns:repeat(3, 1fr)}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #eef2f7;padding:22px;}
+    .section{padding:60px 0}
+    h1,h2,h3{margin:0 0 12px}
+    h1{font-size:40px;line-height:1.15}
+    p{line-height:1.6;color:#324056}
+    .badge-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .badge{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:8px 14px;font-weight:600;font-size:12px;color:#163056}
+    /* Floating Chat */
+    #cwg-chat{position:fixed;right:22px;bottom:22px;width:520px;max-width:95vw;background:#fff;border-radius:18px;box-shadow:0 20px 40px rgba(14,22,60,.25);overflow:hidden;border:1px solid #e6e8f0;z-index:100}
+    #cwg-chat-header{background:var(--navy);color:white;padding:14px 16px;display:flex;align-items:center;gap:12px;font-weight:700}
+    #cwg-chat-header .badge{background:gold; color:#1c1c1c; font-weight:700; border-radius:999px; padding:4px 10px; font-size:12px}
+    #cwg-chat-body{padding:14px 16px;height:360px;overflow:auto;background:#fbfeff}
+    .msg{display:flex;margin:8px 0;gap:8px}
+    .bot .bubble{background:#f1f4f9;border-radius:14px;padding:12px 14px;max-width:90%;border:1px solid #e6eaf2;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+    .user{justify-content:flex-end}
+    .user .bubble{background:var(--blue);color:white;border-radius:14px;padding:12px 14px;max-width:90%}
+    .bubble p{margin:0}
+    .hint{color:#5b6b8a;font-size:12px}
+    .cta{margin-top:6px}
+    .button{padding:12px 16px;border-radius:10px;border:0;background:var(--blue);color:white;font-weight:700;cursor:pointer}
+    .button.secondary{background:#fff;color:var(--navy);border:1px solid #d9e6ff}
+    .section-title{font-size:28px;margin-bottom:8px}
+    /* Hero nav anchors placeholder to demonstrate multi-section feel */
+    section{scroll-margin-top:80px}
+    /* Ensure chat starts expanded visually */
+    #cwg-chat.expanded{height:auto}
+    /* Nice responsive tweaks for smaller screens */
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      #cwg-chat{width:92vw}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">CWG AI Website</div>
+      <div class="spacer"></div>
+      <a href="#home">Home</a>
+      <a href="#screen-printing">Screen Printing</a>
+      <a href="#embroidery">Embroidery</a>
+      <a href="#promo">Promo Products</a>
+      <a href="#corporate">Corporate Gifts</a>
+      <a href="#apparel">Apparel</a>
+      <a href="#art-help">Art Help</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main id="home" class="hero">
+    <section class="container">
+      <div class="grid" style="grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;">
+        <div>
+          <h1 style="font-size:48px;line-height:1.08;margin-bottom:12px">Custom Apparel & Promo Products, Guided by AI</h1>
+          <p style="font-size:18px; color:#324056;max-width:720px">Tell us what you need. The CWG AI Assistant captures contact info, project type, artwork needs, quantity, deadline, and budget level so sales can follow up faster with better information.</p>
+          <div style="display:flex;gap:12px;margin-top:16px">
+            <button class="button" onclick="startOrder()">Start AI Order</button>
+            <button class="button secondary" onclick="getIdeas()">Get Product Ideas</button>
+          </div>
+          <div class="badge-row" aria-label="trust badges" style="margin-top:20px">
+            <span class="badge">Screen Printing</span>
+            <span class="badge">Embroidery</span>
+            <span class="badge">Promo Products</span>
+            <span class="badge">Corporate Gifts</span>
+            <span class="badge">Artwork Help</span>
+          </div>
+        </div>
+        <div class="card" style="padding:20px;min-height:240px;display:flex;flex-direction:column;justify-content:center;align-items:stretch;background:linear-gradient(#fff,#f7fbff);border:1px solid #eef2f7">
+          <div style="font-weight:700;margin-bottom:6px">Overview</div>
+          <p style="margin:0">A polished, customer-facing AI that captures leads and guides orders—without feeling like a backend tool. Expanded chat is front-and-center as the hero feature.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="screen-printing" class="section container" style="padding-top:40px">
+    <h2 class="section-title">Screen Printing</h2>
+    <p>High-impact apparel graphics, event merch, and team wear with fast turnaround.</p>
+  </section>
+
+  <section id="embroidery" class="section container" style="background:#fff">
+    <h2 class="section-title">Embroidery</h2>
+    <p>Premium embroidery for polos, hats, uniforms, and corporate wear.</p>
+  </section>
+
+  <section id="promo" class="section container" style="background:#f5f7fb">
+    <h2 class="section-title">Promo Products / Ad Specialty</h2>
+    <p>Drinkware, bags, pens, awards, and trade show swag with lightweight production.</p>
+  </section>
+
+  <section id="corporate" class="section container">
+    <h2 class="section-title">Corporate Gifts</h2>
+    <p>Branded gifts that reinforce your company identity and appreciation programs.</p>
+  </section>
+
+  <section id="apparel" class="section container" style="background:#fff">
+    <h2 class="section-title">Apparel</h2>
+    <p>From classic tees to performance wear with quality print and embroidery.</p>
+  </section>
+
+  <section id="art-help" class="section container" style="background:#f7f9fc">
+    <h2 class="section-title">Art Upload / Design Help</h2>
+    <p>Upload artwork or get professional design assistance to ensure print-ready files.</p>
+  </section>
+
+  <section id="contact" class="section container" style="background:#fff">
+    <h2 class="section-title">Contact / Start Order</h2>
+    <p>Start your AI-assisted order and let CWG guide you from concept to completion.</p>
+  </section>
+
+  <section id="ideas" class="section container" style="background:#f5f7fb; padding-top:0">
+    <h2 class="section-title">Not Sure What to Order? Ask for Ideas.</h2>
+    <p>Visitors can tell the AI their audience, event, budget, and deadline, and the assistant suggests product directions.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:8px">
+      <div class="card"><strong>Best Sellers</strong><p>Popular, reliable options that sell well for most audiences.</p></div>
+      <div class="card"><strong>Trade Shows</strong><p>Memorable giveaways and stage-ready items under budget.</p></div>
+      <div class="card"><strong>Sports Teams</strong><p>Team gear and spirit wear ideas that travel well.</p></div>
+      <div class="card"><strong>Schools</strong><p>School spirit wear and fundraising-friendly items.</p></div>
+      <div class="card"><strong>Corporate Gifts</strong><p>Thoughtful executive gifts with branding.</p></div>
+      <div class="card"><strong>Drinkware</strong><p>Quality mugs, tumblers, and water bottles.</p></div>
+      <div class="card"><strong>Headwear</strong><p>Caps, beanies, and embroidered hats.</p></div>
+      <div class="card"><strong>Apparel</strong><p>Shirts, hoodies, jackets with strong prints.</p></div>
+      <div class="card"><strong>Construction</strong><p>Durable items engineered for tough jobsites.</p></div>
+      <div class="card"><strong>Healthcare</strong><p>Safe, compliant branded items for clinics and staff.</p></div>
+    </div>
+  </section>
+
+  <section id="contact-cta" class="section container" style="background:#fff">
+    <h2 class="section-title">Final CTA</h2>
+    <p>Ready to Make Quote Requests Easier?</p>
+    <p class="hint">Start with an AI-guided request that captures the right information before the sales team follows up.</p>
+    <div style="display:flex;gap:12px;margin-top:6px">
+      <button class="button" onclick="startOrder()">Start Your AI-Guided Quote Request</button>
+      <button class="button secondary" onclick="getIdeas()">Ask for Product Ideas</button>
+    </div>
+  </section>
+
+  <footer class="section container" style="background:#fff;text-align:center;padding:40px 20px">
+    <div>Custom Werks Graphics</div>
+    <div>Screen Printing · Embroidery · Promotional Products · Corporate Gifts · Art Help</div>
+    <div style="margin-top:8px;font-size:12px;color:#5b6b8a">AI ordering experience concept prepared for demonstration.</div>
+    <div style="margin-top:6px;font-size:12px;color:#5b6b8a">Contact: 423.756.1144 | sales@customwerks.net</div>
+  </footer>
+
+  <!-- Floating Chat Widget -->
+  <div id="cwg-chat" class="expanded" aria-label="CWG AI Order Assistant">
+    <div id="cwg-chat-header">
+      <span style="display:inline-block;width:12px;height:12px;background:#4ade80;border-radius:50%"></span>
+      <span>CWG AI Order Assistant</span>
+      <span class="spacer" style="flex:1"></span>
+      <span class="badge">AI Lead Capture + Order Assistant</span>
+    </div>
+    <div id="cwg-chat-body">
+      <div class="msg bot"><div class="bubble"><p>Hi — I can help you start a custom order, find the right product, or get your project ready for the CWG team. First, I’ll need your name, email, and phone number so we can follow up with accurate pricing and next steps.</p></div></div>
+      <div class="msg bot"><div class="bubble"><p>What type of project can I help you with today?</p></div></div>
+      <div class="msg bot"><div class="bubble"><p>Screen Printing</p></div></div>
+      <div class="msg bot"><div class="bubble"><p>Embroidery</p></div></div>
+      <div class="msg bot"><div class="bubble"><p>Ad Specialty / Promotional Item</p></div></div>
+    </div>
+  </div>
+
+  <script>
+    function startOrder(){
+      // Scroll to contact section as a demo start
+      document.querySelector('#contact').scrollIntoView({behavior:'smooth'});
+    }
+    function getIdeas(){
+      // Simple demo ideas panel; could be extended to show notional ideas
+      alert('Not sure what to order? Ask for ideas: Best Sellers, Trade Shows, Sports Teams, Schools, Corporate Gifts, Drinkware, Headwear, Apparel, Construction, Healthcare.');
+    }
+  </script>
+</body>
+</html>
