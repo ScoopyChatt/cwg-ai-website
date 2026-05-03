@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!-- Force Vercel rebuild for dark theme deployment -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Werks Graphics – Screen Printing, Embroidery & Promo Products</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Custom Werks Graphics – Premium Promotional Products & Screen Printing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,35 +13,54 @@
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: #e0e0e0;
-      background: #1a1a1a;
+      background: #0f0f0f;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    a {
+      color: #4da6ff;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #7bc4ff;
     }
 
     /* Header & Nav */
     header {
-      background: #252525;
-      border-bottom: 1px solid #333;
+      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+      border-bottom: 2px solid #ff6b35;
       position: sticky;
       top: 0;
       z-index: 40;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
 
     nav {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 16px 20px;
+      padding: 20px;
       display: flex;
       align-items: center;
       gap: 40px;
+      flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 800;
       color: #ffffff;
       text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 2px;
     }
 
     .nav-menu {
@@ -51,202 +69,342 @@
       flex: 1;
       margin: 0;
       list-style: none;
+      flex-wrap: wrap;
     }
 
     .nav-menu a {
-      text-decoration: none;
       color: #e0e0e0;
       font-weight: 500;
       font-size: 14px;
       transition: color 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .nav-menu a:hover {
-      color: #4da6ff;
+      color: #ff6b35;
     }
 
-    .nav-contact {
+    .nav-cta {
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      color: white !important;
+      padding: 12px 24px;
+      border-radius: 50px;
       font-weight: 600;
-      color: #ffffff;
-      text-decoration: none;
+      transition: transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-      padding: 80px 20px;
+      background: linear-gradient(135deg, rgba(30, 91, 216, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%),
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23151515" width="1200" height="600"/><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%231e5bd8;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%23ff6b35;stop-opacity:0.1" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad)"/></svg>');
+      background-size: cover;
+      background-position: center;
+      padding: 120px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(30, 91, 216, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+      pointer-events: none;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     .hero h1 {
-      font-size: 48px;
+      font-size: 64px;
       font-weight: 800;
       margin-bottom: 20px;
-      line-height: 1.2;
-      color: #ffffff;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 24px;
+      color: #ff6b35;
+      margin-bottom: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .hero p {
       font-size: 18px;
       color: #b0b0b0;
-      margin-bottom: 30px;
-      line-height: 1.6;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .button {
       display: inline-block;
-      padding: 14px 32px;
-      background: #0066cc;
+      padding: 16px 40px;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       color: white;
       text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: background 0.2s;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: all 0.3s;
       border: none;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
     }
 
     .button:hover {
-      background: #0052a3;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
     }
 
     .button.secondary {
       background: transparent;
-      color: #4da6ff;
-      border: 2px solid #4da6ff;
-      padding: 12px 30px;
+      color: #ff6b35;
+      border: 2px solid #ff6b35;
     }
 
     .button.secondary:hover {
-      background: rgba(77, 166, 255, 0.1);
+      background: rgba(255, 107, 53, 0.1);
+    }
+
+    /* Products Section */
+    .products {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 100px 20px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-header h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: #b0b0b0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .product-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #333;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      border-color: #ff6b35;
+      box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(135deg, #1e5bd8 0%, #ff6b35 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    }
+
+    .product-info {
+      padding: 30px;
+    }
+
+    .product-info h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .product-info p {
+      font-size: 14px;
+      color: #b0b0b0;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .product-cta {
+      display: inline-block;
+      color: #ff6b35;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+
+    .product-cta:hover {
+      color: #ff8c42;
+      margin-left: 5px;
+    }
+
+    /* Lead Form Section */
+    .lead-section {
+      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+      padding: 80px 20px;
+      margin: 80px 0;
+      border-top: 2px solid #ff6b35;
+      border-bottom: 2px solid #ff6b35;
+    }
+
+    .lead-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .lead-section h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .lead-section p {
+      text-align: center;
+      color: #b0b0b0;
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #e0e0e0;
+      font-size: 14px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 16px;
+      background: #333;
+      border: 2px solid #444;
+      border-radius: 8px;
+      color: #e0e0e0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #ff6b35;
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
     }
 
     /* Services Section */
     .services {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 100px 20px;
     }
 
-    .services h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
-      text-align: center;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .service-list {
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
     }
 
-    .service-item {
-      padding: 30px;
-      background: #252525;
-      border-radius: 4px;
-      text-align: center;
+    .service-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+      padding: 40px;
+      border-radius: 12px;
       border: 1px solid #333;
+      transition: all 0.3s;
+      text-align: center;
     }
 
-    .service-item h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      font-weight: 700;
+    .service-card:hover {
+      border-color: #ff6b35;
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
       color: #ffffff;
     }
 
-    .service-item p {
-      font-size: 14px;
+    .service-card p {
       color: #b0b0b0;
       line-height: 1.6;
-    }
-
-    /* CTA Section */
-    .cta {
-      background: #252525;
-      padding: 60px 20px;
-      text-align: center;
-      border-top: 1px solid #333;
-    }
-
-    .cta-content {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .cta h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .cta p {
-      font-size: 16px;
-      color: #b0b0b0;
-      margin-bottom: 30px;
-    }
-
-    /* Contact Section */
-    .contact {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin: 40px 0;
-    }
-
-    .contact-card {
-      padding: 30px;
-    }
-
-    .contact-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    .contact-card p {
-      color: #4da6ff;
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    /* Footer */
-    footer {
-      background: #0a0a0a;
-      color: #e0e0e0;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 13px;
-      border-top: 1px solid #333;
-    }
-
-    footer a {
-      color: #4da6ff;
-      text-decoration: none;
     }
 
     /* Chat Widget */
@@ -254,42 +412,42 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 56px;
-      height: 56px;
-      background: #0066cc;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       border: none;
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 28px;
       z-index: 100;
       transition: all 0.3s;
     }
 
     #chat-toggle:hover {
-      background: #0052a3;
-      box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
       transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(255, 107, 53, 0.5);
     }
 
     #chat-widget {
       position: fixed;
-      bottom: 90px;
+      bottom: 100px;
       right: 20px;
-      width: 380px;
+      width: 420px;
       max-width: 95vw;
-      background: #252525;
-      border-radius: 8px;
-      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.5);
+      background: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
       display: none;
       flex-direction: column;
       z-index: 100;
       font-size: 14px;
-      max-height: 500px;
+      max-height: 600px;
       border: 1px solid #333;
+      overflow: hidden;
     }
 
     #chat-widget.open {
@@ -297,22 +455,25 @@
     }
 
     #chat-header {
-      background: #0066cc;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       color: white;
-      padding: 16px;
-      border-radius: 8px 8px 0 0;
+      padding: 20px;
       font-weight: 700;
+      font-size: 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-bottom: 2px solid #333;
     }
 
     #chat-header::before {
       content: '';
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       background: #4ade80;
       border-radius: 50%;
+      margin-right: 10px;
+      box-shadow: 0 0 8px #4ade80;
     }
 
     #close-chat {
@@ -320,19 +481,19 @@
       border: none;
       color: white;
       cursor: pointer;
-      font-size: 20px;
+      font-size: 24px;
       padding: 0;
+      line-height: 1;
     }
 
     #chat-messages {
       flex: 1;
       overflow-y: auto;
-      padding: 16px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      background: #1a1a1a;
-      min-height: 200px;
+      background: #0f0f0f;
     }
 
     .message {
@@ -346,44 +507,63 @@
     }
 
     .bubble {
-      max-width: 70%;
-      padding: 10px 14px;
-      border-radius: 6px;
+      max-width: 75%;
+      padding: 12px 16px;
+      border-radius: 8px;
       line-height: 1.4;
+      font-size: 13px;
+      word-wrap: break-word;
     }
 
     .message.bot .bubble {
-      background: #333;
+      background: #252525;
       color: #e0e0e0;
-      border: 1px solid #444;
+      border: 1px solid #333;
     }
 
     .message.user .bubble {
-      background: #0066cc;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       color: white;
     }
 
     #chat-input-area {
-      padding: 12px;
+      padding: 16px;
       border-top: 1px solid #333;
       display: flex;
       gap: 8px;
+      background: #1a1a1a;
     }
 
     #chat-input {
       flex: 1;
-      padding: 10px 12px;
-      border: 1px solid #444;
-      border-radius: 4px;
-      font-size: 14px;
+      padding: 10px 14px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      font-size: 13px;
       font-family: inherit;
-      background: #333;
+      background: #252525;
       color: #e0e0e0;
     }
 
-    #chat-input:focus {
-      outline: none;
-      border-color: #0066cc;
+    #chat-input::placeholder {
+      color: #666;
+    }
+
+    .chat-btn {
+      padding: 10px 16px;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+
+    .chat-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
     }
 
     .button-group {
@@ -395,26 +575,63 @@
 
     .button-group button {
       padding: 8px 12px;
-      background: #333;
-      border: 1px solid #444;
+      background: #252525;
+      border: 1px solid #ff6b35;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       transition: all 0.2s;
-      color: #e0e0e0;
+      color: #ff6b35;
+      font-family: inherit;
     }
 
     .button-group button:hover {
-      background: #0066cc;
+      background: #ff6b35;
       color: white;
-      border-color: #0066cc;
+    }
+
+    /* Footer */
+    footer {
+      background: #000000;
+      color: #e0e0e0;
+      padding: 60px 20px 40px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 2px solid #ff6b35;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .footer-section h4 {
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    .footer-section p, .footer-section a {
+      color: #b0b0b0;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      color: #666;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 32px;
+        font-size: 36px;
       }
 
       .nav-menu {
@@ -422,19 +639,17 @@
         font-size: 12px;
       }
 
-      nav {
-        gap: 20px;
-      }
-
-      .services h2,
-      .cta h2,
-      .contact h2 {
-        font-size: 24px;
+      .form-row {
+        grid-template-columns: 1fr;
       }
 
       #chat-widget {
-        width: 90vw;
-        max-height: 400px;
+        width: 95vw;
+        bottom: 90px;
+      }
+
+      .products-grid, .services-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -444,66 +659,198 @@
     <nav>
       <div class="logo">CWG</div>
       <div class="nav-menu">
-        <a href="#screen-printing">Screen Printing</a>
-        <a href="#embroidery">Embroidery</a>
-        <a href="#promo">Promo Products</a>
-        <a href="#corporate">Corporate Gifts</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </div>
-      <a href="tel:4237561144" class="nav-contact">423.756.1144</a>
+      <a href="#get-quote" class="nav-cta">Get Quote</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h1>Quality Custom Apparel & Products</h1>
-      <p>Screen printing, embroidery, promotional products, and corporate gifts for any business need. Fast turnaround. Excellent results.</p>
-      <a href="#contact" class="button">Get Started</a>
+      <div class="hero-subtitle">Premium Promotional Products</div>
+      <h1>Make Your Brand Unforgettable</h1>
+      <p>Screen printing, embroidery, and custom promotional products that elevate your business. Turn your vision into stunning branded merchandise that leaves a lasting impression.</p>
+      <div class="hero-cta-group">
+        <button class="button" onclick="document.getElementById('chat-toggle').click()">Chat with AI Specialist</button>
+        <a href="#get-quote" class="button secondary">Request Quote</a>
+      </div>
     </div>
   </section>
 
-  <section class="services">
-    <h2>What We Do</h2>
-    <div class="service-list">
-      <div class="service-item">
+  <section class="products" id="products">
+    <div class="section-header">
+      <h2>What We Create</h2>
+      <p>From branded apparel to promotional merchandise, we deliver quality that impresses</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image">👕</div>
+        <div class="product-info">
+          <h3>Custom Apparel</h3>
+          <p>Screen printed and embroidered t-shirts, hoodies, polos, and jackets with precision and care.</p>
+          <a href="#" class="product-cta">Learn More →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">🎒</div>
+        <div class="product-info">
+          <h3>Bags & Backpacks</h3>
+          <p>Branded bags, backpacks, and totes perfect for trade shows, events, and giveaways.</p>
+          <a href="#" class="product-cta">Learn More →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">🥤</div>
+        <div class="product-info">
+          <h3>Drinkware</h3>
+          <p>Custom mugs, tumblers, water bottles, and cups that keep your brand in hand daily.</p>
+          <a href="#" class="product-cta">Learn More →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">🎁</div>
+        <div class="product-info">
+          <h3>Corporate Gifts</h3>
+          <p>Thoughtfully branded gifts that strengthen client relationships and employee loyalty.</p>
+          <a href="#" class="product-cta">Learn More →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">👒</div>
+        <div class="product-info">
+          <h3>Headwear</h3>
+          <p>Branded caps, beanies, and hats that get your logo noticed wherever they go.</p>
+          <a href="#" class="product-cta">Learn More →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">🎯</div>
+        <div class="product-info">
+          <h3>Award Products</h3>
+          <p>Customize awards, plaques, medals, and recognition items for your team.</p>
+          <a href="#" class="product-cta">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p>Complete solutions from concept to delivery</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✏️</div>
+        <h3>Design & Art</h3>
+        <p>Our creative team helps bring your vision to life with expert design and artwork preparation.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🖨️</div>
         <h3>Screen Printing</h3>
-        <p>High-quality apparel graphics for events, teams, and retail. Fast turnaround on orders of all sizes.</p>
+        <p>High-quality screen printing with vibrant colors and precise details on any apparel.</p>
       </div>
-      <div class="service-item">
+      <div class="service-card">
+        <div class="service-icon">🧵</div>
         <h3>Embroidery</h3>
-        <p>Premium embroidered polos, hats, uniforms, and corporate wear with precise detail and durability.</p>
+        <p>Professional embroidery that adds sophistication and durability to your branded items.</p>
       </div>
-      <div class="service-item">
-        <h3>Promo Products</h3>
-        <p>Branded drinkware, bags, pens, awards, and trade show giveaways. Low minimums available.</p>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Fast Turnaround</h3>
+        <p>Rush orders welcome. We deliver quality on your timeline without compromising excellence.</p>
       </div>
-      <div class="service-item">
-        <h3>Corporate Gifts</h3>
-        <p>Thoughtfully branded gifts for clients and employees. Reinforces your company identity.</p>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Bulk Orders</h3>
+        <p>Competitive pricing on large quantities for corporate events, trade shows, and campaigns.</p>
       </div>
-      <div class="service-item">
-        <h3>Apparel</h3>
-        <p>T-shirts, hoodies, jackets, and performance wear with expert screen printing and embroidery.</p>
-      </div>
-      <div class="service-item">
-        <h3>Design Help</h3>
-        <p>Upload your artwork or let our team help prepare print-ready files from your ideas.</p>
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>Support</h3>
+        <p>Dedicated support from quote to delivery. We're here to make your project seamless.</p>
       </div>
     </div>
   </section>
 
-  <section class="cta" id="contact">
-    <div class="cta-content">
-      <h2>Ready to Order?</h2>
-      <p>Contact us to discuss your project, get a quote, and start your custom order.</p>
-      <a href="tel:4237561144" class="button">Call Us: 423.756.1144</a>
-      <p style="margin-top: 20px; font-size: 14px; color: #b0b0b0;">Or email us at sales@customwerks.net</p>
+  <section class="lead-section" id="get-quote">
+    <div class="lead-container">
+      <h2>Get Your Free Quote Today</h2>
+      <p>Tell us about your project and we'll provide a personalized quote within 24 hours</p>
+      <form id="quote-form" onsubmit="handleFormSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required placeholder="John Smith">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="john@company.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="423-756-1144">
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Your Company">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="product-type">What are you looking for? *</label>
+          <select id="product-type" name="product-type" required>
+            <option value="">Select a product type</option>
+            <option value="apparel">Custom Apparel (t-shirts, hoodies, polos)</option>
+            <option value="bags">Bags & Backpacks</option>
+            <option value="drinkware">Drinkware (mugs, tumblers, bottles)</option>
+            <option value="gifts">Corporate Gifts</option>
+            <option value="headwear">Headwear (caps, beanies)</option>
+            <option value="awards">Awards & Recognition</option>
+            <option value="other">Something Else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Project Details *</label>
+          <textarea id="description" name="description" required placeholder="Tell us about your project, quantity needed, timeline, and any special requirements..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="budget">Estimated Budget</label>
+          <input type="text" id="budget" name="budget" placeholder="e.g., $500 - $1000">
+        </div>
+        <button type="submit" class="button" style="width: 100%;">Get Free Quote</button>
+      </form>
     </div>
   </section>
 
   <footer>
-    <div>Custom Werks Graphics</div>
-    <div style="margin-top: 10px;">Screen Printing · Embroidery · Promotional Products · Corporate Gifts</div>
-    <div style="margin-top: 15px; color: #999;">423.756.1144 | sales@customwerks.net</div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Custom Werks Graphics</h4>
+        <p>Premium promotional products & screen printing</p>
+        <p style="margin-top: 10px; font-size: 12px; color: #666;">Located in Chattanooga, TN</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#get-quote">Get Quote</a>
+        <a href="#">Showroom</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <a href="tel:4237561144">📞 (423) 756-1144</a>
+        <a href="tel:4232676032">📞 (423) 267-6032</a>
+        <a href="mailto:sales@customwerks.net">📧 sales@customwerks.net</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Custom Werks Graphics. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
   </footer>
 
   <!-- Chat Toggle Button -->
@@ -512,30 +859,43 @@
   <!-- Chat Widget -->
   <div id="chat-widget">
     <div id="chat-header">
-      <span>👋 Need Help?</span>
+      <span>AI Order Specialist</span>
       <button id="close-chat" onclick="closeChat()">✕</button>
     </div>
     <div id="chat-messages"></div>
     <div id="chat-input-area">
       <input type="text" id="chat-input" placeholder="Type your message..." />
-      <button onclick="sendMessage()" style="padding: 10px 16px; background: #0066cc; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Send</button>
+      <button onclick="sendMessage()" class="chat-btn">Send</button>
     </div>
   </div>
 
   <script>
+    // Enhanced AI Chatbot with order building capabilities
     const chatState = {
       stage: 'greeting',
       data: {
         name: '',
         email: '',
         phone: '',
-        projectType: '',
-        description: ''
-      }
+        company: '',
+        productType: '',
+        quantity: '',
+        description: '',
+        budget: '',
+        timeline: ''
+      },
+      context: []
     };
 
     const messages = document.getElementById('chat-messages');
     const chatWidget = document.getElementById('chat-widget');
+    const chatInput = document.getElementById('chat-input');
+
+    const orderQuestions = {
+      productType: ['apparel', 'bags', 'drinkware', 'gifts', 'headwear', 'awards'],
+      quantities: ['under 50', '50-100', '100-250', '250-500', '500+'],
+      timeline: ['asap', '1 week', '2 weeks', '1 month', 'flexible']
+    };
 
     function toggleChat() {
       if (chatWidget.classList.contains('open')) {
@@ -548,9 +908,9 @@
     function openChat() {
       chatWidget.classList.add('open');
       if (messages.children.length === 0) {
-        addMessage('Hi! 👋 Can I help you with an order or quote today?');
+        addMessage('👋 Welcome to Custom Werks Graphics! I\'m your AI order specialist. I\'m here to help you design the perfect promotional products for your brand. What\'s your name?');
       }
-      setTimeout(() => document.getElementById('chat-input').focus(), 100);
+      setTimeout(() => chatInput.focus(), 100);
     }
 
     function closeChat() {
@@ -572,75 +932,174 @@
     }
 
     function sendMessage() {
-      const input = document.getElementById('chat-input');
-      const text = input.value.trim();
+      const text = chatInput.value.trim();
       if (!text) return;
 
       addMessage(text, true);
-      input.value = '';
+      chatInput.value = '';
       handleResponse(text);
     }
 
     function handleResponse(userMessage) {
       setTimeout(() => {
-        if (chatState.stage === 'greeting') {
-          addMessage('Great! I can help. What\'s your name?');
-          chatState.stage = 'collecting_name';
+        switch(chatState.stage) {
+          case 'greeting':
+            chatState.data.name = userMessage;
+            addMessage(`Great to meet you, ${userMessage}! 👍 What company are you with, or are you working as an individual?`);
+            chatState.stage = 'collecting_company';
+            break;
+
+          case 'collecting_company':
+            chatState.data.company = userMessage;
+            addMessage(`Perfect, ${chatState.data.company}! What's the best email to reach you at?`);
+            chatState.stage = 'collecting_email';
+            break;
+
+          case 'collecting_email':
+            chatState.data.email = userMessage;
+            addMessage(`Got it, ${userMessage}. And what's your phone number? We may need to discuss custom details.`);
+            chatState.stage = 'collecting_phone';
+            break;
+
+          case 'collecting_phone':
+            chatState.data.phone = userMessage;
+            addMessage(`Awesome! Now, what type of promotional products are you most interested in?`);
+            addMessage(
+              '<button onclick="selectOption(\'apparel\')">Custom Apparel</button>' +
+              '<button onclick="selectOption(\'bags\')">Bags</button>' +
+              '<button onclick="selectOption(\'drinkware\')">Drinkware</button>' +
+              '<button onclick="selectOption(\'gifts\')">Corporate Gifts</button>' +
+              '<button onclick="selectOption(\'other\')">Something Else</button>',
+              false,
+              true
+            );
+            chatState.stage = 'collecting_product_type';
+            break;
+
+          case 'collecting_product_type':
+            chatState.data.productType = userMessage;
+            addMessage(`Excellent choice! How many items are you looking to order?`);
+            addMessage(
+              '<button onclick="selectQuantity(\'under50\')">Under 50</button>' +
+              '<button onclick="selectQuantity(\'50-100\')">50-100</button>' +
+              '<button onclick="selectQuantity(\'100-250\')">100-250</button>' +
+              '<button onclick="selectQuantity(\'250-500\')">250-500</button>' +
+              '<button onclick="selectQuantity(\'500plus\')">500+</button>',
+              false,
+              true
+            );
+            chatState.stage = 'collecting_quantity';
+            break;
+
+          case 'collecting_quantity':
+            chatState.data.quantity = userMessage;
+            addMessage(`Perfect! When do you need this order completed?`);
+            addMessage(
+              '<button onclick="selectTimeline(\'asap\')">ASAP</button>' +
+              '<button onclick="selectTimeline(\'1week\')">1 Week</button>' +
+              '<button onclick="selectTimeline(\'2weeks\')">2 Weeks</button>' +
+              '<button onclick="selectTimeline(\'1month\')">1 Month</button>' +
+              '<button onclick="selectTimeline(\'flexible\')">Flexible</button>',
+              false,
+              true
+            );
+            chatState.stage = 'collecting_timeline';
+            break;
+
+          case 'collecting_timeline':
+            chatState.data.timeline = userMessage;
+            addMessage(`Great! Tell me more about your project. What design or message do you want on these items? Any color preferences?`);
+            chatState.stage = 'collecting_description';
+            break;
+
+          case 'collecting_description':
+            chatState.data.description = userMessage;
+            addMessage(`Awesome project! 🎨 What's your budget range for this order?`);
+            chatState.stage = 'collecting_budget';
+            break;
+
+          case 'collecting_budget':
+            chatState.data.budget = userMessage;
+            showOrderSummary();
+            break;
+
+          default:
+            addMessage(`I didn't quite understand that. Can you tell me more about your promotional product needs?`);
         }
-        else if (chatState.stage === 'collecting_name') {
-          chatState.data.name = userMessage;
-          addMessage(`Thanks ${chatState.data.name}! What\'s your email?`);
-          chatState.stage = 'collecting_email';
-        }
-        else if (chatState.stage === 'collecting_email') {
-          chatState.data.email = userMessage;
-          addMessage('And your phone number?');
-          chatState.stage = 'collecting_phone';
-        }
-        else if (chatState.stage === 'collecting_phone') {
-          chatState.data.phone = userMessage;
-          addMessage('Perfect! What type of project do you need?');
-          addMessage(
-            '<button onclick="selectProject(\'Screen Printing\')">Screen Printing</button>' +
-            '<button onclick="selectProject(\'Embroidery\')">Embroidery</button>' +
-            '<button onclick="selectProject(\'Promo Products\')">Promo Products</button>' +
-            '<button onclick="selectProject(\'Corporate Gifts\')">Corporate Gifts</button>',
-            false,
-            true
-          );
-          chatState.stage = 'collecting_type';
-        }
-        else if (chatState.stage === 'collecting_type') {
-          chatState.data.projectType = userMessage;
-          addMessage(`Tell me more about your ${chatState.data.projectType} order.`);
-          chatState.stage = 'collecting_description';
-        }
-        else if (chatState.stage === 'collecting_description') {
-          chatState.data.description = userMessage;
-          addMessage(
-            `Got it! Here's your info:\n\n` +
-            `<b>Name:</b> ${chatState.data.name}\n` +
-            `<b>Email:</b> ${chatState.data.email}\n` +
-            `<b>Phone:</b> ${chatState.data.phone}\n` +
-            `<b>Project:</b> ${chatState.data.projectType}\n` +
-            `<b>Details:</b> ${chatState.data.description}\n\n` +
-            `Our team will contact you within 24 hours with a quote!`
-          );
-          chatState.stage = 'complete';
-        }
-      }, 300);
+      }, 500);
     }
 
-    function selectProject(type) {
-      chatState.data.projectType = type;
-      addMessage(type, true);
-      addMessage(`Tell me more about your ${type} order.`);
+    function selectOption(option) {
+      chatState.data.productType = option;
+      addMessage(option.charAt(0).toUpperCase() + option.slice(1), true);
+      addMessage(`Excellent choice! How many items are you looking to order?`);
+      addMessage(
+        '<button onclick="selectQuantity(\'under50\')">Under 50</button>' +
+        '<button onclick="selectQuantity(\'50-100\')">50-100</button>' +
+        '<button onclick="selectQuantity(\'100-250\')">100-250</button>' +
+        '<button onclick="selectQuantity(\'250-500\')">250-500</button>' +
+        '<button onclick="selectQuantity(\'500plus\')">500+</button>',
+        false,
+        true
+      );
+      chatState.stage = 'collecting_quantity';
+    }
+
+    function selectQuantity(qty) {
+      chatState.data.quantity = qty;
+      addMessage(qty.replace(/([a-z])([A-Z])/g, '$1 $2'), true);
+      addMessage(`Perfect! When do you need this order completed?`);
+      addMessage(
+        '<button onclick="selectTimeline(\'asap\')">ASAP</button>' +
+        '<button onclick="selectTimeline(\'1week\')">1 Week</button>' +
+        '<button onclick="selectTimeline(\'2weeks\')">2 Weeks</button>' +
+        '<button onclick="selectTimeline(\'1month\')">1 Month</button>' +
+        '<button onclick="selectTimeline(\'flexible\')">Flexible</button>',
+        false,
+        true
+      );
+      chatState.stage = 'collecting_timeline';
+    }
+
+    function selectTimeline(timeline) {
+      chatState.data.timeline = timeline;
+      addMessage(timeline.replace(/([a-z])([A-Z])/g, '$1 $2'), true);
+      addMessage(`Great! Tell me more about your project. What design or message do you want on these items? Any color preferences?`);
       chatState.stage = 'collecting_description';
     }
 
-    document.getElementById('chat-input').addEventListener('keypress', (e) => {
+    function showOrderSummary() {
+      const summary = `
+        <strong>Order Summary:</strong><br>
+        📝 Name: ${chatState.data.name}<br>
+        🏢 Company: ${chatState.data.company}<br>
+        📧 Email: ${chatState.data.email}<br>
+        📱 Phone: ${chatState.data.phone}<br>
+        🎯 Product: ${chatState.data.productType}<br>
+        📦 Quantity: ${chatState.data.quantity}<br>
+        ⏰ Timeline: ${chatState.data.timeline}<br>
+        💭 Description: ${chatState.data.description}<br>
+        💰 Budget: ${chatState.data.budget}<br><br>
+        <strong>Perfect! Our team will review your order details and send you a personalized quote within 24 hours. We'll discuss customization options, design, and pricing.</strong>
+      `;
+      addMessage(summary);
+      addMessage('📞 You can also call us directly at (423) 756-1144 for immediate assistance!');
+      chatState.stage = 'complete';
+    }
+
+    chatInput.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') sendMessage();
     });
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const formData = new FormData(document.getElementById('quote-form'));
+      const data = Object.fromEntries(formData);
+
+      console.log('Quote Request Submitted:', data);
+      alert(`Thank you, ${data.name}! We've received your quote request. Our team will contact you within 24 hours at ${data.email} or ${data.phone}.`);
+      document.getElementById('quote-form').reset();
+    }
   </script>
 </body>
 </html>
