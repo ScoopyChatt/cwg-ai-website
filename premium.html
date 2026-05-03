@@ -1242,6 +1242,21 @@
 
     let conversationHistory = [];
     let isLoadingMessage = false;
+    let hasShownAutoIntro = false;
+
+    // Auto-open chatbot with announcement on page load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        if (!hasShownAutoIntro) {
+          hasShownAutoIntro = true;
+          openChat();
+          // Auto-close after 6 seconds
+          setTimeout(() => {
+            closeChat();
+          }, 6000);
+        }
+      }, 2000);
+    });
 
     function sendMessage() {
       const text = chatInput.value.trim();
