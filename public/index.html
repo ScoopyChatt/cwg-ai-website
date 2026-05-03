@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CWG AI Website – AI-Powered Quote Requests & Lead Capture</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Geist:wght@600;700&display=swap" rel="stylesheet">
+  <title>Custom Werks Graphics – Screen Printing, Embroidery & Promo Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,1238 +12,321 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --navy: #0e1b3b;
-      --navy-light: #1a2f5e;
-      --blue: #1e5bd8;
-      --blue-light: #3d6fe8;
-      --blue-lighter: #e8f0ff;
-      --gold: #c59a00;
-      --gold-light: #f0e6d2;
-      --bg: #f7f8fb;
-      --white: #ffffff;
-      --text-primary: #0b1020;
-      --text-secondary: #324056;
-      --border: #eef2f7;
-      --shadow-sm: 0 2px 8px rgba(14, 27, 59, 0.06);
-      --shadow-md: 0 8px 24px rgba(14, 27, 59, 0.12);
-      --shadow-lg: 0 20px 40px rgba(14, 27, 59, 0.15);
-    }
-
-    html, body {
-      background: var(--bg);
-      color: var(--text-primary);
+    body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       line-height: 1.6;
-      font-size: 16px;
+      color: #1a1a1a;
+      background: #ffffff;
     }
 
-    /* === HEADER === */
+    /* Header & Nav */
     header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: saturate(180%) blur(6px);
-      z-index: 40;
-      border-bottom: 1px solid var(--border);
+      z-index: 100;
     }
 
     nav {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 16px 20px;
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 40px;
     }
 
     .logo {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
-      color: var(--blue);
+      color: #1a1a1a;
       text-decoration: none;
-      letter-spacing: -0.5px;
     }
 
-    nav-menu {
+    .nav-menu {
       display: flex;
-      gap: 28px;
+      gap: 30px;
       flex: 1;
       margin: 0;
+      list-style: none;
     }
 
-    nav a {
-      color: var(--text-primary);
+    .nav-menu a {
       text-decoration: none;
+      color: #1a1a1a;
       font-weight: 500;
       font-size: 14px;
-      letter-spacing: 0.2px;
       transition: color 0.2s;
     }
 
-    nav a:hover {
-      color: var(--blue);
+    .nav-menu a:hover {
+      color: #0066cc;
     }
 
-    .nav-cta {
-      margin-left: auto;
-      display: flex;
-      gap: 12px;
-    }
-
-    button {
-      border: none;
-      border-radius: 8px;
-      padding: 10px 20px;
+    .nav-contact {
       font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-size: 14px;
-    }
-
-    .btn-primary {
-      background: var(--blue);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--blue-light);
-      box-shadow: 0 4px 12px rgba(30, 91, 216, 0.3);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
-
-    .btn-secondary:hover {
-      background: var(--blue-lighter);
-      border-color: var(--blue);
-    }
-
-    /* === HERO === */
-    .hero {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 80px 20px;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-content h1 {
-      font-size: 48px;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      font-weight: 800;
-      color: var(--text-primary);
-    }
-
-    .hero-content p {
-      font-size: 18px;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-      line-height: 1.7;
-      max-width: 600px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 40px;
-    }
-
-    .hero-buttons button {
-      padding: 12px 28px;
-      font-size: 16px;
-    }
-
-    .trust-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .badge {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--navy);
-      white-space: nowrap;
-    }
-
-    .hero-visual {
-      background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 400px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .hero-visual h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-      color: var(--text-primary);
-    }
-
-    .hero-visual p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      text-align: center;
-      margin: 0;
-    }
-
-    /* === SECTIONS === */
-    section {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 80px 20px;
-    }
-
-    section.navy-bg {
-      background: var(--navy);
-      color: white;
-      margin: 0;
-      padding: 80px 20px;
-    }
-
-    section.navy-bg h2 {
-      color: white;
-    }
-
-    section.navy-bg p {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    h2 {
-      font-size: 36px;
-      font-weight: 800;
-      margin-bottom: 16px;
-      color: var(--text-primary);
-    }
-
-    .section-subtitle {
-      font-size: 18px;
-      color: var(--text-secondary);
-      margin-bottom: 48px;
-      max-width: 700px;
-    }
-
-    section.navy-bg .section-subtitle {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    /* === CARDS GRID === */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 28px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s;
-    }
-
-    .card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
-    }
-
-    .card h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-      color: var(--text-primary);
-    }
-
-    .card p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* === HOW IT WORKS === */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
-    }
-
-    .step {
-      text-align: center;
-    }
-
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: var(--blue);
-      color: white;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
-
-    .step h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-    }
-
-    .step p {
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    /* === BEFORE/AFTER === */
-    .comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 48px;
-    }
-
-    .comparison-column h3 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .comparison-column.before h3 {
-      color: #d9534f;
-    }
-
-    .comparison-column.after h3 {
-      color: #5cb85c;
-    }
-
-    .comparison-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .comparison-list li {
-      padding: 12px 0;
-      padding-left: 28px;
-      position: relative;
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    .comparison-list li:before {
-      content: "✗";
-      position: absolute;
-      left: 0;
-      font-weight: bold;
-      color: #d9534f;
-    }
-
-    .comparison-column.after .comparison-list li:before {
-      content: "✓";
-      color: #5cb85c;
-    }
-
-    /* === SALES INBOX PREVIEW === */
-    .inbox-lead {
-      background: white;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      padding: 40px;
-      box-shadow: var(--shadow-md);
-      margin-top: 48px;
-    }
-
-    .lead-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .lead-score {
-      background: #5cb85c;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .lead-score.hot {
-      background: #d9534f;
-    }
-
-    .lead-title h3 {
-      font-size: 20px;
-      margin-bottom: 4px;
-      color: var(--text-primary);
-    }
-
-    .lead-title p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin: 0;
-    }
-
-    .lead-details {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .detail {
-      padding: 16px;
-      background: var(--blue-lighter);
-      border-radius: 8px;
-    }
-
-    .detail-label {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--blue);
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .detail-value {
-      font-size: 14px;
-      color: var(--text-primary);
-      font-weight: 500;
-    }
-
-    .lead-notes {
-      background: var(--gold-light);
-      border-left: 4px solid var(--gold);
-      padding: 16px;
-      border-radius: 6px;
-      margin-bottom: 24px;
-    }
-
-    .lead-notes-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--navy);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .lead-notes p {
-      font-size: 14px;
-      color: var(--text-primary);
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .lead-emails {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    .email-badge {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
-
-    .lead-status {
-      background: var(--blue-lighter);
-      padding: 12px 16px;
-      border-radius: 8px;
-      color: var(--blue);
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    /* === CHATBOT === */
-    .chatbot-container {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      width: 480px;
-      max-width: 95vw;
-      background: white;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      max-height: 680px;
-    }
-
-    .chatbot-header {
-      background: var(--navy);
-      color: white;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .chatbot-header-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .chatbot-status {
-      width: 10px;
-      height: 10px;
-      background: #4ade80;
-      border-radius: 50%;
-    }
-
-    .chatbot-header-text h3 {
-      font-size: 15px;
-      font-weight: 700;
-      margin: 0;
-      color: white;
-    }
-
-    .chatbot-header-text p {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.8);
-      margin: 0;
-    }
-
-    .chatbot-badge {
-      background: var(--gold);
-      color: var(--navy);
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .chatbot-close {
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-      font-size: 20px;
-      padding: 0;
-      width: 28px;
-      height: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .chatbot-messages {
-      flex: 1;
-      overflow-y: auto;
-      padding: 20px;
-      background: #fbfeff;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .message {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .message.bot {
-      justify-content: flex-start;
-    }
-
-    .message.user {
-      justify-content: flex-end;
-    }
-
-    .message-bubble {
-      max-width: 80%;
-      padding: 12px 14px;
-      border-radius: 12px;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .message.bot .message-bubble {
-      background: #f1f4f9;
-      color: var(--text-primary);
-      border: 1px solid #e6eaf2;
-    }
-
-    .message.user .message-bubble {
-      background: var(--blue);
-      color: white;
-    }
-
-    .chatbot-input {
-      display: flex;
-      gap: 8px;
-      padding: 16px;
-      border-top: 1px solid var(--border);
-      background: white;
-    }
-
-    .chatbot-input input {
-      flex: 1;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 10px 14px;
-      font-size: 13px;
-      font-family: inherit;
-    }
-
-    .chatbot-input input:focus {
-      outline: none;
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(30, 91, 216, 0.1);
-    }
-
-    .chatbot-input button {
-      width: 40px;
-      height: 40px;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--blue);
-      color: white;
-    }
-
-    /* === IDEAS MODE === */
-    .ideas-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 40px;
-    }
-
-    .idea-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .idea-card:hover {
-      border-color: var(--blue);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
-    .idea-card h4 {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-    }
-
-    .idea-card p {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin: 0;
-    }
-
-    /* === FOOTER === */
-    footer {
-      background: white;
-      border-top: 1px solid var(--border);
-      padding: 40px 20px;
-      margin-top: 80px;
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .footer-company {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-    }
-
-    .footer-services {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-    }
-
-    .footer-contact {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 13px;
-    }
-
-    .footer-contact a {
-      color: var(--blue);
+      color: #1a1a1a;
       text-decoration: none;
     }
 
-    .footer-contact a:hover {
-      text-decoration: underline;
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #f5f5f5 0%, #efefef 100%);
+      padding: 80px 20px;
+      text-align: center;
     }
 
-    .footer-disclaimer {
-      font-size: 12px;
-      color: #999;
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    /* === RESPONSIVE === */
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .button:hover {
+      background: #0052a3;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: #0066cc;
+      border: 2px solid #0066cc;
+      padding: 12px 30px;
+    }
+
+    .button.secondary:hover {
+      background: #f5f5f5;
+    }
+
+    /* Services Section */
+    .services {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .services h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-item {
+      padding: 30px;
+      background: #f9f9f9;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .service-item h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .service-item p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: #f5f5f5;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .cta p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    /* Contact Section */
+    .contact {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .contact-card {
+      padding: 30px;
+    }
+
+    .contact-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: #0066cc;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 60px 20px;
+      .hero h1 {
+        font-size: 32px;
       }
 
-      .hero-content h1 {
-        font-size: 36px;
-      }
-
-      .chatbot-container {
-        width: 92vw;
-        max-height: 60vh;
-      }
-
-      h2 {
-        font-size: 28px;
-      }
-
-      .comparison {
-        grid-template-columns: 1fr;
+      .nav-menu {
+        gap: 15px;
+        font-size: 12px;
       }
 
       nav {
-        flex-wrap: wrap;
-        gap: 16px;
+        gap: 20px;
       }
 
-      nav-menu {
-        gap: 16px;
-        font-size: 13px;
-      }
-
-      .lead-details {
-        grid-template-columns: 1fr;
+      .services h2,
+      .cta h2,
+      .contact h2 {
+        font-size: 24px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <nav>
-      <a href="#home" class="logo">CWG AI Website</a>
-      <nav-menu>
-        <a href="#home">Home</a>
+      <div class="logo">CWG</div>
+      <div class="nav-menu">
         <a href="#screen-printing">Screen Printing</a>
         <a href="#embroidery">Embroidery</a>
         <a href="#promo">Promo Products</a>
         <a href="#corporate">Corporate Gifts</a>
-        <a href="#apparel">Apparel</a>
-        <a href="#art-help">Art Help</a>
-        <a href="#contact">Contact</a>
-      </nav-menu>
-      <div class="nav-cta">
-        <button class="btn-secondary" onclick="scrollToChat()">Get Ideas</button>
-        <button class="btn-primary" onclick="scrollToChat()">Start AI Order</button>
       </div>
+      <a href="tel:4237561144" class="nav-contact">423.756.1144</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
+  <section class="hero">
     <div class="hero-content">
-      <h1>Custom Apparel & Promo Products, Guided by AI</h1>
-      <p>Tell us what you need. The CWG AI Assistant captures contact info, project type, artwork needs, quantity, deadline, and budget level so sales can follow up faster with better information.</p>
-      <div class="hero-buttons">
-        <button class="btn-primary" onclick="scrollToChat()">Start AI Order</button>
-        <button class="btn-secondary" onclick="scrollToChat()">Get Product Ideas</button>
-      </div>
-      <div class="trust-badges">
-        <div class="badge">Screen Printing</div>
-        <div class="badge">Embroidery</div>
-        <div class="badge">Promo Products</div>
-        <div class="badge">Corporate Gifts</div>
-        <div class="badge">Artwork Help</div>
-      </div>
+      <h1>Quality Custom Apparel & Products</h1>
+      <p>Screen printing, embroidery, promotional products, and corporate gifts for any business need. Fast turnaround. Excellent results.</p>
+      <a href="#contact" class="button">Get Started</a>
     </div>
-    <div class="hero-visual">
-      <div style="text-align: center;">
-        <div style="font-size: 48px; margin-bottom: 16px;">💬</div>
-        <h3>AI-Powered Lead Capture</h3>
-        <p>Interactive chatbot collects qualified leads in real-time and prepares them for your sales team.</p>
+  </section>
+
+  <section class="services">
+    <h2>What We Do</h2>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>Screen Printing</h3>
+        <p>High-quality apparel graphics for events, teams, and retail. Fast turnaround on orders of all sizes.</p>
+      </div>
+      <div class="service-item">
+        <h3>Embroidery</h3>
+        <p>Premium embroidered polos, hats, uniforms, and corporate wear with precise detail and durability.</p>
+      </div>
+      <div class="service-item">
+        <h3>Promo Products</h3>
+        <p>Branded drinkware, bags, pens, awards, and trade show giveaways. Low minimums available.</p>
+      </div>
+      <div class="service-item">
+        <h3>Corporate Gifts</h3>
+        <p>Thoughtfully branded gifts for clients and employees. Reinforces your company identity.</p>
+      </div>
+      <div class="service-item">
+        <h3>Apparel</h3>
+        <p>T-shirts, hoodies, jackets, and performance wear with expert screen printing and embroidery.</p>
+      </div>
+      <div class="service-item">
+        <h3>Design Help</h3>
+        <p>Upload your artwork or let our team help prepare print-ready files from your ideas.</p>
       </div>
     </div>
   </section>
 
-  <!-- POPULAR WAYS -->
-  <section>
-    <h2>Popular Ways CWG Can Help</h2>
-    <p class="section-subtitle">From team apparel to trade show giveaways, the CWG AI Assistant helps customers explore all options and prepare complete quote requests.</p>
-    <div class="cards-grid">
-      <div class="card"><h3>T-Shirts & Apparel</h3><p>Custom printed tees, hoodies, and team wear.</p></div>
-      <div class="card"><h3>Embroidered Polos</h3><p>Professional embroidery for corporate wear.</p></div>
-      <div class="card"><h3>Hats & Headwear</h3><p>Branded caps, beanies, and embroidered hats.</p></div>
-      <div class="card"><h3>Corporate Gifts</h3><p>Branded gifts for client appreciation.</p></div>
-      <div class="card"><h3>Drinkware</h3><p>Custom mugs, tumblers, and water bottles.</p></div>
-      <div class="card"><h3>Bags & Accessories</h3><p>Branded totes, backpacks, and more.</p></div>
-      <div class="card"><h3>Awards & Recognition</h3><p>Custom recognition items for teams.</p></div>
-      <div class="card"><h3>Trade Show Giveaways</h3><p>Budget-friendly promotional giveaways.</p></div>
-      <div class="card"><h3>Event Merchandise</h3><p>Custom branded event apparel.</p></div>
-      <div class="card"><h3>Employee Uniforms</h3><p>Durable branded uniforms for teams.</p></div>
-      <div class="card"><h3>Signs & Banners</h3><p>Large format printing solutions.</p></div>
-      <div class="card"><h3>Team Apparel</h3><p>Sports teams and company team wear.</p></div>
+  <section class="cta" id="contact">
+    <div class="cta-content">
+      <h2>Ready to Order?</h2>
+      <p>Contact us to discuss your project, get a quote, and start your custom order.</p>
+      <a href="tel:4237561144" class="button">Call Us: 423.756.1144</a>
+      <p style="margin-top: 20px; font-size: 14px;">Or email us at sales@customwerks.net</p>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="navy-bg">
-    <h2>How It Works</h2>
-    <p class="section-subtitle">Five simple steps from idea to sales-ready lead.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Share Contact</h3>
-        <p>Provide name, email, and phone number.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Choose Project</h3>
-        <p>Select Screen Printing, Embroidery, or Promo Items.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Describe Needs</h3>
-        <p>Tell the AI exactly what you're looking for.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Share Artwork</h3>
-        <p>Upload or describe design and file status.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">5</div>
-        <h3>CWG Follows Up</h3>
-        <p>Sales team calls with pricing and next steps.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BEFORE/AFTER -->
-  <section>
-    <h2>Why AI-Powered Quote Requests Are Better</h2>
-    <p class="section-subtitle">The difference between scattered information and sales-ready leads.</p>
-    <div class="comparison">
-      <div class="comparison-column before">
-        <h3>Before AI Website</h3>
-        <ul class="comparison-list">
-          <li>Incomplete quote requests</li>
-          <li>Missing contact details</li>
-          <li>Vague project descriptions</li>
-          <li>Unclear artwork status</li>
-          <li>Too much back-and-forth</li>
-          <li>Sales manually qualifies every lead</li>
-        </ul>
-      </div>
-      <div class="comparison-column after">
-        <h3>After AI Website</h3>
-        <ul class="comparison-list">
-          <li>Contact captured first</li>
-          <li>Complete lead details</li>
-          <li>Organized project specifications</li>
-          <li>Artwork status documented</li>
-          <li>Fewer follow-up questions</li>
-          <li>Clean, sales-ready leads</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SALES VALUE -->
-  <section class="navy-bg">
-    <h2>Built for Your Sales Team</h2>
-    <p class="section-subtitle">More complete quote requests. Less back-and-forth. Better conversations that close faster.</p>
-    <div class="cards-grid">
-      <div class="card" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">
-        <h3 style="color: white;">Captures Contact First</h3>
-        <p style="color: rgba(255,255,255,0.8);">Always get name, email, and phone before any discussion.</p>
-      </div>
-      <div class="card" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">
-        <h3 style="color: white;">Organizes Project Details</h3>
-        <p style="color: rgba(255,255,255,0.8);">Quantity, colors, decoration, timeline all in one place.</p>
-      </div>
-      <div class="card" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">
-        <h3 style="color: white;">Sends Cleaner Leads</h3>
-        <p style="color: rgba(255,255,255,0.8);">Pre-qualified opportunities ready for immediate follow-up.</p>
-      </div>
-      <div class="card" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">
-        <h3 style="color: white;">Reduces Questions</h3>
-        <p style="color: rgba(255,255,255,0.8);">Artwork status, budget level, and deadline already known.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- INBOX PREVIEW -->
-  <section>
-    <h2>CWG Sales Inbox Preview</h2>
-    <p class="section-subtitle">What your sales team receives. Every. Single. Lead.</p>
-    <div class="inbox-lead">
-      <div class="lead-header">
-        <div class="lead-score hot">Hot Lead</div>
-        <div class="lead-title">
-          <h3>Sarah Mitchell</h3>
-          <p>Scenic City Dental • 423-555-0198</p>
-        </div>
-      </div>
-      <div class="lead-details">
-        <div class="detail">
-          <div class="detail-label">Email</div>
-          <div class="detail-value">sarah@sceniccitydentalwellness.com</div>
-        </div>
-        <div class="detail">
-          <div class="detail-label">Project Type</div>
-          <div class="detail-value">Screen Printing</div>
-        </div>
-        <div class="detail">
-          <div class="detail-label">Request</div>
-          <div class="detail-value">124 white & grey t-shirts with left chest + full back print</div>
-        </div>
-        <div class="detail">
-          <div class="detail-label">Missing Info</div>
-          <div class="detail-value">Size breakdown, in-hands date, artwork file</div>
-        </div>
-      </div>
-      <div class="lead-notes">
-        <div class="lead-notes-title">AI Sales Note</div>
-        <p>Customer has company logo but needs print-readiness review. Recommend immediate follow-up with: (1) shirt options and sizing breakdown, (2) art upload instructions, (3) production timeline question, and (4) estimated pricing range based on budget level.</p>
-      </div>
-      <div style="margin-bottom: 20px;">
-        <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 12px;">Send to CWG Team:</p>
-        <div class="lead-emails">
-          <div class="email-badge">📧 brandon@customwerks.net</div>
-          <div class="email-badge">📧 rod@customwerks.net</div>
-        </div>
-      </div>
-      <div class="lead-status">✓ Ready for Sales Follow-up</div>
-    </div>
-  </section>
-
-  <!-- SCREEN PRINTING -->
-  <section id="screen-printing">
-    <h2>Screen Printing</h2>
-    <p class="section-subtitle">High-impact apparel graphics, event merch, and team wear with fast turnaround.</p>
-    <div class="cards-grid">
-      <div class="card"><h3>T-Shirts</h3><p>Front, back, and sleeve prints in any color.</p></div>
-      <div class="card"><h3>Hoodies</h3><p>Durable screen printing on sweatshirts.</p></div>
-      <div class="card"><h3>Polos</h3><p>Professional logo placement on polo shirts.</p></div>
-      <div class="card"><h3>Event Merch</h3><p>Custom event and concert apparel.</p></div>
-    </div>
-  </section>
-
-  <!-- EMBROIDERY -->
-  <section id="embroidery" style="background: #f5f7fb;">
-    <h2>Embroidery</h2>
-    <p class="section-subtitle">Premium embroidery for polos, hats, uniforms, and corporate wear.</p>
-    <div class="cards-grid">
-      <div class="card"><h3>Embroidered Polos</h3><p>Left chest logo placement for professionals.</p></div>
-      <div class="card"><h3>Hats & Caps</h3><p>Custom embroidered hats and beanies.</p></div>
-      <div class="card"><h3>Jackets</h3><p>Full embroidery on outerwear and windbreakers.</p></div>
-      <div class="card"><h3>Corporate Wear</h3><p>Uniforms with professional embroidery details.</p></div>
-    </div>
-  </section>
-
-  <!-- PROMO PRODUCTS -->
-  <section id="promo">
-    <h2>Promotional Products & Ad Specialty</h2>
-    <p class="section-subtitle">Drinkware, bags, pens, awards, and trade show swag with lightweight production.</p>
-    <div class="cards-grid">
-      <div class="card"><h3>Drinkware</h3><p>Mugs, tumblers, and water bottles.</p></div>
-      <div class="card"><h3>Bags & Totes</h3><p>Canvas and durable promotional bags.</p></div>
-      <div class="card"><h3>Writing Instruments</h3><p>Branded pens and pencils.</p></div>
-      <div class="card"><h3>Trade Show Giveaways</h3><p>Budget-friendly promotional items.</p></div>
-    </div>
-  </section>
-
-  <!-- CORPORATE GIFTS -->
-  <section id="corporate" style="background: #f5f7fb;">
-    <h2>Corporate Gifts</h2>
-    <p class="section-subtitle">Branded gifts that reinforce your company identity and appreciation programs.</p>
-    <div class="cards-grid">
-      <div class="card"><h3>Executive Gifts</h3><p>Premium items for client appreciation.</p></div>
-      <div class="card"><h3>Employee Appreciation</h3><p>Thoughtful branded gifts for teams.</p></div>
-      <div class="card"><h3>Holiday Gifts</h3><p>Seasonal branded gift sets.</p></div>
-      <div class="card"><h3>Milestone Gifts</h3><p>Recognition items for achievements.</p></div>
-    </div>
-  </section>
-
-  <!-- APPAREL -->
-  <section id="apparel">
-    <h2>Custom Apparel</h2>
-    <p class="section-subtitle">From classic tees to performance wear with quality print and embroidery.</p>
-    <div class="cards-grid">
-      <div class="card"><h3>T-Shirts</h3><p>Comfortable and durable for any brand.</p></div>
-      <div class="card"><h3>Hoodies & Sweatshirts</h3><p>Cozy options with print or embroidery.</p></div>
-      <div class="card"><h3>Performance Wear</h3><p>Moisture-wicking athletic apparel.</p></div>
-      <div class="card"><h3>Jackets & Outerwear</h3><p>Durable outerwear with branding.</p></div>
-    </div>
-  </section>
-
-  <!-- ART HELP -->
-  <section id="art-help" style="background: #f5f7fb;">
-    <h2>Art Upload & Design Help</h2>
-    <p class="section-subtitle">Upload artwork or get professional design assistance to ensure print-ready files.</p>
-    <div style="margin-top: 40px;">
-      <div class="card" style="max-width: 600px;">
-        <h3>What We Accept</h3>
-        <p>AI, EPS, PDF, SVG, PNG, JPG formats. Our team will review for print-readiness and suggest improvements if needed.</p>
-        <hr style="border: none; border-top: 1px solid var(--border); margin: 20px 0;">
-        <h3 style="margin-top: 20px;">Need Design Help?</h3>
-        <p>Tell the AI if you need artwork designed from scratch, cleaned up for printing, or recreated for better results. The CWG design team can guide you through options and costs.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- IDEAS MODE -->
-  <section id="ideas">
-    <h2>Not Sure What to Order?</h2>
-    <p class="section-subtitle">Tell the AI your audience, event, budget, and deadline. We'll suggest product directions and ideas.</p>
-    <div class="ideas-grid">
-      <div class="idea-card"><h4>Best Sellers</h4><p>Popular items that sell well for most audiences.</p></div>
-      <div class="idea-card"><h4>Trade Shows</h4><p>Memorable giveaways under budget.</p></div>
-      <div class="idea-card"><h4>Sports Teams</h4><p>Team gear and spirit wear ideas.</p></div>
-      <div class="idea-card"><h4>Schools</h4><p>School spirit wear and fundraising items.</p></div>
-      <div class="idea-card"><h4>Banking & Finance</h4><p>Professional branded corporate items.</p></div>
-      <div class="idea-card"><h4>Healthcare</h4><p>Safe, compliant branded items.</p></div>
-      <div class="idea-card"><h4>Construction</h4><p>Durable items for job sites.</p></div>
-      <div class="idea-card"><h4>Corporate Gifts</h4><p>Thoughtful executive gifts.</p></div>
-      <div class="idea-card"><h4>Drinkware</h4><p>Quality mugs and tumblers.</p></div>
-      <div class="idea-card"><h4>Headwear</h4><p>Caps, beanies, and hats.</p></div>
-      <div class="idea-card"><h4>Employee Gifts</h4><p>Team appreciation items.</p></div>
-      <div class="idea-card"><h4>Event Merch</h4><p>Custom branded event apparel.</p></div>
-    </div>
-  </section>
-
-  <!-- RUSH ORDERS -->
-  <section style="background: #f5f7fb;">
-    <h2>Need It Fast?</h2>
-    <p class="section-subtitle">The AI helps triage rush requests and deadline questions. Tell us your event date and we'll confirm what's possible.</p>
-    <div class="cards-grid">
-      <div class="card"><h3>When is your event?</h3><p>Tell us your date and we can confirm what options are possible.</p></div>
-      <div class="card"><h3>When do you need items in hand?</h3><p>In-hands date determines what we can offer.</p></div>
-      <div class="card"><h3>Are you flexible on product style?</h3><p>Flexibility on products expands rush order options.</p></div>
-      <div class="card"><h3>Do you have artwork ready?</h3><p>Print-ready files speed up production timelines.</p></div>
-    </div>
-    <div style="margin-top: 40px; padding: 24px; background: white; border-radius: 12px; border: 1px solid var(--border);">
-      <p style="margin: 0; font-size: 14px; color: var(--text-secondary);"><strong>Note:</strong> CWG confirms availability and timeline before promising delivery. The AI asks the right questions. Your sales team confirms the timeline.</p>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section id="contact">
-    <h2>Ready to Make Quote Requests Easier?</h2>
-    <p class="section-subtitle">Start with an AI-guided request that captures the right information before the sales team follows up.</p>
-    <div class="hero-buttons" style="justify-content: center; margin-top: 40px;">
-      <button class="btn-primary" onclick="scrollToChat()" style="padding: 14px 32px; font-size: 16px;">Start Your AI-Guided Quote Request</button>
-      <button class="btn-secondary" onclick="scrollToChat()" style="padding: 14px 32px; font-size: 16px;">Ask for Product Ideas</button>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-company">Custom Werks Graphics</div>
-      <div class="footer-services">Screen Printing · Embroidery · Promotional Products · Corporate Gifts · Art Help</div>
-      <div class="footer-contact">
-        <a href="tel:4237561144">📞 423.756.1144</a>
-        <a href="mailto:sales@customwerks.net">📧 sales@customwerks.net</a>
-      </div>
-      <div class="footer-disclaimer">AI ordering experience concept prepared for demonstration purposes.</div>
-    </div>
+    <div>Custom Werks Graphics</div>
+    <div style="margin-top: 10px;">Screen Printing · Embroidery · Promotional Products · Corporate Gifts</div>
+    <div style="margin-top: 15px; color: #999;">423.756.1144 | sales@customwerks.net</div>
   </footer>
-
-  <!-- CHATBOT WIDGET -->
-  <div class="chatbot-container" id="chatbot">
-    <div class="chatbot-header">
-      <div class="chatbot-header-left">
-        <div class="chatbot-status"></div>
-        <div class="chatbot-header-text">
-          <h3>CWG Order Assistant</h3>
-          <p>Start your quote request in under 60 seconds</p>
-        </div>
-      </div>
-      <div class="chatbot-badge">AI Lead Capture</div>
-      <button class="chatbot-close" onclick="toggleChatbot()">✕</button>
-    </div>
-    <div class="chatbot-messages" id="messages">
-      <div class="message bot">
-        <div class="message-bubble">Hi! I can help you start a custom order, find the right product, or get your project ready for the CWG team. First, I'll need your name, email, and phone number so we can follow up with accurate pricing and next steps. What's your name?</div>
-      </div>
-    </div>
-    <div class="chatbot-input">
-      <input type="text" id="inputField" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
-      <button onclick="sendMessage()">→</button>
-    </div>
-  </div>
-
-  <script>
-    let chatState = {
-      stage: 'name', // name, email, phone, project, description, artwork, quantity, deadline, budget, summary
-      name: '',
-      email: '',
-      phone: '',
-      project: '',
-      description: '',
-      artwork: '',
-      quantity: '',
-      deadline: '',
-      budget: ''
-    };
-
-    function sendMessage() {
-      const input = document.getElementById('inputField');
-      const message = input.value.trim();
-      if (!message) return;
-
-      addMessage('user', message);
-      input.value = '';
-
-      setTimeout(() => {
-        processMessage(message);
-      }, 500);
-    }
-
-    function handleKeyPress(e) {
-      if (e.key === 'Enter') sendMessage();
-    }
-
-    function addMessage(sender, text) {
-      const messagesDiv = document.getElementById('messages');
-      const msg = document.createElement('div');
-      msg.className = `message ${sender}`;
-      msg.innerHTML = `<div class="message-bubble">${text}</div>`;
-      messagesDiv.appendChild(msg);
-      messagesDiv.scrollTop = messagesDiv.scrollHeight;
-    }
-
-    function processMessage(text) {
-      if (chatState.stage === 'name') {
-        chatState.name = text;
-        chatState.stage = 'email';
-        addMessage('bot', `Nice to meet you, ${text}! What's your email address?`);
-      } else if (chatState.stage === 'email') {
-        chatState.email = text;
-        chatState.stage = 'phone';
-        addMessage('bot', `Got it! And your phone number?`);
-      } else if (chatState.stage === 'phone') {
-        chatState.phone = text;
-        chatState.stage = 'project';
-        addMessage('bot', `Perfect! What type of project can I help you with today?`);
-        addMessage('bot', `Choose: Screen Printing, Embroidery, or Ad Specialty / Promo Item`);
-      } else if (chatState.stage === 'project') {
-        if (text.toLowerCase().includes('screen')) chatState.project = 'Screen Printing';
-        else if (text.toLowerCase().includes('embroid')) chatState.project = 'Embroidery';
-        else if (text.toLowerCase().includes('promo') || text.toLowerCase().includes('specialty')) chatState.project = 'Ad Specialty / Promo Item';
-
-        chatState.stage = 'description';
-        addMessage('bot', `Great! What exactly do you need? (For example: "124 white t-shirts with left chest print")`);
-      } else if (chatState.stage === 'description') {
-        chatState.description = text;
-        chatState.stage = 'artwork';
-        addMessage('bot', `Perfect! Do you have artwork ready, or do you need help with design? (Options: I have print-ready artwork, I have a logo but need review, I need help designing)`);
-      } else if (chatState.stage === 'artwork') {
-        chatState.artwork = text;
-        chatState.stage = 'quantity';
-        addMessage('bot', `Got it! Approximately how many items? What deadline are we looking at?`);
-      } else if (chatState.stage === 'quantity') {
-        chatState.quantity = text;
-        chatState.stage = 'budget';
-        addMessage('bot', `And what's your budget range? Budget-friendly, Mid-range, Premium, or Not sure yet?`);
-      } else if (chatState.stage === 'budget') {
-        chatState.budget = text;
-        showSummary();
-      }
-    }
-
-    function showSummary() {
-      chatState.stage = 'summary';
-
-      const summary = `
-✓ Contact Captured
-Name: ${chatState.name}
-Email: ${chatState.email}
-Phone: ${chatState.phone}
-
-✓ Project Details
-Type: ${chatState.project}
-Request: ${chatState.description}
-Artwork: ${chatState.artwork}
-Budget: ${chatState.budget}
-
-✓ Ready for Sales Follow-up
-The CWG team will call ${chatState.name} at ${chatState.phone} to confirm final pricing, timeline, and next steps.
-      `;
-
-      addMessage('bot', summary);
-      addMessage('bot', `Thanks ${chatState.name}! Your quote request is ready. The CWG team will follow up within 1 business day with product options and pricing. Expect a call from Brandon or Rod!`);
-    }
-
-    function toggleChatbot() {
-      const chatbot = document.getElementById('chatbot');
-      chatbot.style.display = chatbot.style.display === 'none' ? 'flex' : 'none';
-    }
-
-    function scrollToChat() {
-      document.getElementById('chatbot').scrollIntoView({ behavior: 'smooth' });
-      document.getElementById('inputField').focus();
-    }
-
-    // Mobile responsive
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.innerWidth < 768) {
-        document.querySelector('nav-menu').style.display = 'none';
-      }
-    });
-  </script>
 </body>
 </html>
