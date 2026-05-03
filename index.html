@@ -1180,25 +1180,19 @@
 
   <script>
     // FRESH MINIMAL CHATBOT - NO AUTO-CLOSE
-    document.addEventListener('DOMContentLoaded', () => {
-      const widget = document.getElementById('chat-widget');
-      const messagesDiv = document.getElementById('messages');
-      const input = document.getElementById('input');
-      const chatBtn = document.getElementById('chat-btn');
-      const closeBtn = document.getElementById('close-btn');
-      const sendBtn = document.getElementById('send-btn');
+    const widget = document.getElementById('chat-widget');
+    const messagesDiv = document.getElementById('messages');
+    const input = document.getElementById('input');
+    const chatBtn = document.getElementById('chat-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const sendBtn = document.getElementById('send-btn');
 
-      if (!chatBtn || !closeBtn || !widget) {
-        console.error('Chat elements not found!');
-        return;
-      }
+    let messages = [];
+    let needsName = true, needsEmail = true, needsPhone = true;
 
-      let messages = [];
-      let needsName = true, needsEmail = true, needsPhone = true;
-
-      // ONLY close when user clicks close button - NEVER AUTO CLOSE
-      closeBtn.onclick = () => { widget.style.display = 'none'; };
-      chatBtn.onclick = () => { widget.style.display = 'flex'; input.focus(); };
+    // ONLY close when user clicks close button - NEVER AUTO CLOSE
+    closeBtn.onclick = () => { widget.style.display = 'none'; };
+    chatBtn.onclick = () => { widget.style.display = 'flex'; input.focus(); };
 
     function addMessage(text, isUser) {
       messages.push({ role: isUser ? 'user' : 'assistant', content: text });
@@ -1271,13 +1265,6 @@
     input.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
     sendBtn.addEventListener('click', sendMessage);
 
-    // Open on page load
-    setTimeout(() => {
-      widget.style.display = 'flex';
-      addMessage('Hi! What\'s your name? 👋');
-      input.focus();
-    }, 2000);
-
     function handleFormSubmit(e) {
       e.preventDefault();
       const formData = new FormData(document.getElementById('quote-form'));
@@ -1288,7 +1275,6 @@
       document.getElementById('quote-form').reset();
     }
     });
-  </script>
 
     // Auto-open chatbot with announcement on page load
     window.addEventListener('load', () => {

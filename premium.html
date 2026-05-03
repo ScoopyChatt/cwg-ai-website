@@ -1264,33 +1264,17 @@
     // Send on Enter or button click
     input.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
     sendBtn.addEventListener('click', sendMessage);
-      if (messages.children.length === 0) {
-        addMessage('👋 Welcome to Custom Werks Graphics! I\'m your AI order specialist. I\'m here to help you design the perfect promotional products for your brand. What\'s your name?');
-      }
-      setTimeout(() => chatInput.focus(), 100);
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const formData = new FormData(document.getElementById('quote-form'));
+      const data = Object.fromEntries(formData);
+
+      console.log('Quote Request Submitted:', data);
+      alert(`Thank you, ${data.name}! We've received your quote request. Our team will contact you within 24 hours at ${data.email} or ${data.phone}.`);
+      document.getElementById('quote-form').reset();
     }
-
-    function closeChat() {
-      chatWidget.classList.remove('open');
-    }
-
-    function addMessage(text, isUser = false, isButton = false) {
-      const div = document.createElement('div');
-      div.className = `message ${isUser ? 'user' : 'bot'}`;
-
-      if (isButton) {
-        div.innerHTML = `<div class="button-group">${text}</div>`;
-      } else {
-        div.innerHTML = `<div class="bubble">${text}</div>`;
-      }
-
-      messages.appendChild(div);
-      messages.scrollTop = messages.scrollHeight;
-    }
-
-    let conversationHistory = [];
-    let isLoadingMessage = false;
-    let hasShownAutoIntro = false;
+    });
 
     // Auto-open chatbot with announcement on page load
     window.addEventListener('load', () => {
