@@ -3,799 +3,241 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Werks Graphics – Premium Promotional Products & Screen Printing</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Custom Werks Graphics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: #e0e0e0;
       background: #0f0f0f;
+      color: #e0e0e0;
     }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-    }
-
-    a {
-      color: #4da6ff;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    a:hover {
-      color: #7bc4ff;
-    }
-
-    /* Header & Nav */
     header {
       background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
       border-bottom: 2px solid #ff6b35;
+      padding: 20px;
       position: sticky;
       top: 0;
-      z-index: 40;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      z-index: 100;
     }
-
     nav {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 20px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
     }
-
     .logo {
       font-size: 24px;
       font-weight: 800;
-      color: #ffffff;
-      text-decoration: none;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 2px;
+      color: #fff;
     }
-
     .nav-menu {
       display: flex;
       gap: 30px;
-      flex: 1;
-      margin: 0;
       list-style: none;
-      flex-wrap: wrap;
     }
-
     .nav-menu a {
       color: #e0e0e0;
+      text-decoration: none;
       font-weight: 500;
-      font-size: 14px;
       transition: color 0.2s;
-      text-transform: uppercase;
-      letter-spacing: 1px;
     }
-
     .nav-menu a:hover {
       color: #ff6b35;
     }
-
-    .nav-cta {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-      color: white !important;
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: transform 0.2s;
-      white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-    }
-
-    /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, rgba(30, 91, 216, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%),
-                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23151515" width="1200" height="600"/><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%231e5bd8;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%23ff6b35;stop-opacity:0.1" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad)"/></svg>');
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(135deg, #1e5bd8 0%, #ff6b35 100%);
       padding: 120px 20px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(30, 91, 216, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
     .hero-content {
       max-width: 900px;
       margin: 0 auto;
-      position: relative;
-      z-index: 2;
     }
-
     .hero h1 {
       font-size: 64px;
       font-weight: 800;
       margin-bottom: 20px;
-      line-height: 1.1;
-      background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #fff;
     }
-
-    .hero-subtitle {
-      font-size: 24px;
-      color: #ff6b35;
-      margin-bottom: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
     .hero p {
       font-size: 18px;
-      color: #b0b0b0;
       margin-bottom: 40px;
-      line-height: 1.8;
+      color: #f0f0f0;
     }
-
-    .hero-cta-group {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .button {
+    .btn {
       display: inline-block;
       padding: 16px 40px;
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: #ff6b35;
       color: white;
       text-decoration: none;
       border-radius: 50px;
       font-weight: 700;
-      transition: all 0.3s;
       border: none;
       cursor: pointer;
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+      transition: all 0.3s;
     }
-
-    .button:hover {
+    .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
     }
-
-    .button.secondary {
-      background: transparent;
-      color: #ff6b35;
-      border: 2px solid #ff6b35;
-    }
-
-    .button.secondary:hover {
-      background: rgba(255, 107, 53, 0.1);
-    }
-
-    /* Products Section */
-    .products {
+    .section {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 100px 20px;
+      padding: 80px 20px;
     }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-
-    .section-header h2 {
+    .section h2 {
       font-size: 48px;
-      margin-bottom: 15px;
-      color: #ffffff;
+      text-align: center;
+      margin-bottom: 60px;
+      color: #fff;
     }
-
-    .section-header p {
-      font-size: 18px;
-      color: #b0b0b0;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .products-grid {
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
-      margin-bottom: 60px;
     }
-
-    .product-card {
-      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #333;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .product-card:hover {
-      transform: translateY(-10px);
-      border-color: #ff6b35;
-      box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
-    }
-
-    .product-image {
-      width: 100%;
-      height: 250px;
-      background: linear-gradient(135deg, #1e5bd8 0%, #ff6b35 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .product-image::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
-    }
-
-    .product-info {
-      padding: 30px;
-    }
-
-    .product-info h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    .product-info p {
-      font-size: 14px;
-      color: #b0b0b0;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .product-cta {
-      display: inline-block;
-      color: #ff6b35;
-      font-weight: 700;
-      transition: all 0.2s;
-    }
-
-    .product-cta:hover {
-      color: #ff8c42;
-      margin-left: 5px;
-    }
-
-    /* Lead Form Section */
-    .lead-section {
-      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-      padding: 80px 20px;
-      margin: 80px 0;
-      border-top: 2px solid #ff6b35;
-      border-bottom: 2px solid #ff6b35;
-    }
-
-    .lead-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .lead-section h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-      color: #ffffff;
-      text-align: center;
-    }
-
-    .lead-section p {
-      text-align: center;
-      color: #b0b0b0;
-      margin-bottom: 40px;
-      font-size: 16px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #e0e0e0;
-      font-size: 14px;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 14px 16px;
-      background: #333;
-      border: 2px solid #444;
-      border-radius: 8px;
-      color: #e0e0e0;
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      transition: border-color 0.2s;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: #ff6b35;
-      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    /* Services Section */
-    .services {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 100px 20px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-    }
-
-    .service-card {
+    .card {
       background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
       padding: 40px;
       border-radius: 12px;
       border: 1px solid #333;
       transition: all 0.3s;
-      text-align: center;
     }
-
-    .service-card:hover {
+    .card:hover {
+      transform: translateY(-10px);
       border-color: #ff6b35;
-      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
     }
-
-    .service-icon {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
+    .card h3 {
       font-size: 22px;
       margin-bottom: 15px;
-      color: #ffffff;
+      color: #fff;
     }
-
-    .service-card p {
+    .card p {
       color: #b0b0b0;
       line-height: 1.6;
     }
+    footer {
+      background: #1a1a1a;
+      border-top: 1px solid #333;
+      padding: 40px 20px;
+      text-align: center;
+      color: #666;
+    }
 
-    /* Chat Widget */
-    #chat-toggle {
+    /* CHATBOT STYLES */
+    #chat-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
       width: 60px;
       height: 60px;
+      border-radius: 50%;
       background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: white;
       font-size: 28px;
-      z-index: 100;
-      transition: all 0.3s;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      transition: all 0.2s;
     }
-
-    #chat-toggle:hover {
+    #chat-button:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 28px rgba(255, 107, 53, 0.5);
+      box-shadow: 0 6px 16px rgba(255, 107, 53, 0.5);
     }
-
     #chat-widget {
       position: fixed;
-      bottom: 100px;
+      bottom: 90px;
       right: 20px;
-      width: 420px;
-      max-width: 95vw;
+      width: 380px;
+      max-height: 500px;
       background: #1a1a1a;
+      border: 1px solid #333;
       border-radius: 12px;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
       display: none;
       flex-direction: column;
-      z-index: 100;
-      font-size: 14px;
-      max-height: 600px;
-      border: 1px solid #333;
-      overflow: hidden;
+      z-index: 998;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     }
-
     #chat-widget.open {
       display: flex;
     }
-
     #chat-header {
       background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       color: white;
-      padding: 20px;
-      font-weight: 700;
-      font-size: 16px;
+      padding: 16px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      border-bottom: 2px solid #333;
+      align-items: center;
+      border-radius: 12px 12px 0 0;
+      font-weight: 600;
     }
-
-    #chat-header::before {
-      content: '';
-      width: 12px;
-      height: 12px;
-      background: #4ade80;
-      border-radius: 50%;
-      margin-right: 10px;
-      box-shadow: 0 0 8px #4ade80;
-    }
-
-    #close-chat {
+    #chat-close {
       background: none;
       border: none;
       color: white;
+      font-size: 20px;
       cursor: pointer;
-      font-size: 24px;
       padding: 0;
-      line-height: 1;
     }
-
     #chat-messages {
       flex: 1;
       overflow-y: auto;
-      padding: 20px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      background: #0f0f0f;
     }
-
-    .message {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-    }
-
-    .message.user {
-      justify-content: flex-end;
-    }
-
-    .bubble {
-      max-width: 75%;
-      padding: 12px 16px;
+    .msg {
+      padding: 10px 12px;
       border-radius: 8px;
-      line-height: 1.4;
-      font-size: 13px;
+      max-width: 85%;
       word-wrap: break-word;
+      font-size: 14px;
     }
-
-    .message.bot .bubble {
-      background: #252525;
-      color: #e0e0e0;
-      border: 1px solid #333;
-    }
-
-    .message.user .bubble {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    .msg.user {
+      align-self: flex-end;
+      background: #ff6b35;
       color: white;
     }
-
-    #chat-input-area {
-      padding: 16px;
-      border-top: 1px solid #333;
-      display: flex;
-      gap: 8px;
-      background: #1a1a1a;
-    }
-
-    #chat-input {
-      flex: 1;
-      padding: 10px 14px;
-      border: 1px solid #333;
-      border-radius: 6px;
-      font-size: 13px;
-      font-family: inherit;
-      background: #252525;
+    .msg.bot {
+      align-self: flex-start;
+      background: #2a2a2a;
       color: #e0e0e0;
     }
-
-    #chat-input::placeholder {
-      color: #666;
+    #chat-input-area {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      border-top: 1px solid #333;
     }
-
-    .chat-btn {
-      padding: 10px 16px;
+    #chat-input {
+      flex: 1;
+      background: #0f0f0f;
+      border: 1px solid #333;
+      color: #e0e0e0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+    }
+    #chat-send {
       background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       color: white;
       border: none;
+      padding: 8px 16px;
       border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 13px;
-      transition: all 0.2s;
     }
-
-    .chat-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-    }
-
-    .button-group {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 8px 0;
-    }
-
-    .button-group button {
-      padding: 8px 12px;
-      background: #252525;
-      border: 1px solid #ff6b35;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 600;
-      transition: all 0.2s;
-      color: #ff6b35;
-      font-family: inherit;
-    }
-
-    .button-group button:hover {
-      background: #ff6b35;
-      color: white;
-    }
-
-    /* Footer */
-    footer {
-      background: #000000;
-      color: #e0e0e0;
-      padding: 60px 20px 40px;
-      text-align: center;
-      font-size: 14px;
-      border-top: 2px solid #ff6b35;
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-      text-align: left;
-    }
-
-    .footer-section h4 {
-      color: #ffffff;
-      margin-bottom: 15px;
-    }
-
-    .footer-section p, .footer-section a {
-      color: #b0b0b0;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #333;
-      padding-top: 20px;
-      color: #666;
-    }
-
-    /* Reviews Section */
-    .reviews-section {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 100px 20px;
-    }
-
-    .reviews-container {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .reviews-scroll {
-      display: flex;
-      gap: 24px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 20px 0;
-      scroll-padding: 20px;
-    }
-
-    .reviews-scroll::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .reviews-scroll::-webkit-scrollbar-track {
-      background: #1a1a1a;
-      border-radius: 10px;
-    }
-
-    .reviews-scroll::-webkit-scrollbar-thumb {
-      background: #ff6b35;
-      border-radius: 10px;
-    }
-
-    .reviews-scroll::-webkit-scrollbar-thumb:hover {
-      background: #ff8c42;
-    }
-
-    .review-card {
-      flex: 0 0 350px;
-      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 30px;
-      transition: all 0.3s;
-    }
-
-    .review-card:hover {
-      border-color: #ff6b35;
-      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
-      transform: translateY(-5px);
-    }
-
-    .review-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .review-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: white;
-      font-size: 18px;
-    }
-
-    .review-author {
-      flex: 1;
-    }
-
-    .review-name {
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 4px;
-    }
-
-    .review-date {
-      font-size: 12px;
-      color: #666;
-    }
-
-    .review-stars {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 12px;
-    }
-
-    .star {
-      color: #ffd700;
-      font-size: 16px;
-    }
-
-    .review-text {
-      color: #b0b0b0;
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .review-verified {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: #666;
-    }
-
-    .review-verified::before {
-      content: '✓';
-      color: #4ade80;
-      font-weight: 700;
-    }
-
-    .reviews-trust-badge {
-      text-align: center;
-      padding: 30px 20px;
-      background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(30, 91, 216, 0.1) 100%);
-      border-radius: 12px;
-      margin-top: 40px;
-    }
-
-    .badge-stat {
-      font-size: 42px;
-      font-weight: 800;
-      color: #ff6b35;
-      margin-bottom: 8px;
-    }
-
-    .badge-text {
-      color: #b0b0b0;
-      font-size: 16px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .nav-menu {
-        gap: 15px;
-        font-size: 12px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      #chat-widget {
-        width: 95vw;
-        bottom: 90px;
-      }
-
-      .products-grid, .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .review-card {
-        flex: 0 0 280px;
-      }
+    #chat-send:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -803,404 +245,135 @@
   <header>
     <nav>
       <div class="logo">CWG</div>
-      <div class="nav-menu">
-        <a href="#products">Products</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a href="#get-quote" class="nav-cta">Get Quote</a>
+      <ul class="nav-menu">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-subtitle">Premium Promotional Products</div>
-      <h1>Make Your Brand Unforgettable</h1>
-      <p>Screen printing, embroidery, and custom promotional products that elevate your business. Turn your vision into stunning branded merchandise that leaves a lasting impression.</p>
-      <div class="hero-cta-group">
-        <button class="button" onclick="document.getElementById('chat-toggle').click()">Chat with AI Specialist</button>
-        <a href="#get-quote" class="button secondary">Request Quote</a>
-      </div>
+      <h1>Custom Promotional Products</h1>
+      <p>Screen printing, embroidery, and custom apparel for your brand</p>
+      <button class="btn" onclick="openChat()">Chat with AI Specialist</button>
     </div>
   </section>
 
-  <section class="products" id="products">
-    <div class="section-header">
-      <h2>What We Create</h2>
-      <p>From branded apparel to promotional merchandise, we deliver quality that impresses</p>
-    </div>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="product-image">👕</div>
-        <div class="product-info">
-          <h3>Custom Apparel</h3>
-          <p>Screen printed and embroidered t-shirts, hoodies, polos, and jackets with precision and care.</p>
-          <a href="#" class="product-cta">Learn More →</a>
-        </div>
+  <section class="section" id="products">
+    <h2>What We Offer</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Custom Apparel</h3>
+        <p>T-shirts, hoodies, polos, and jackets with your logo or design</p>
       </div>
-      <div class="product-card">
-        <div class="product-image">🎒</div>
-        <div class="product-info">
-          <h3>Bags & Backpacks</h3>
-          <p>Branded bags, backpacks, and totes perfect for trade shows, events, and giveaways.</p>
-          <a href="#" class="product-cta">Learn More →</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">🥤</div>
-        <div class="product-info">
-          <h3>Drinkware</h3>
-          <p>Custom mugs, tumblers, water bottles, and cups that keep your brand in hand daily.</p>
-          <a href="#" class="product-cta">Learn More →</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">🎁</div>
-        <div class="product-info">
-          <h3>Corporate Gifts</h3>
-          <p>Thoughtfully branded gifts that strengthen client relationships and employee loyalty.</p>
-          <a href="#" class="product-cta">Learn More →</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">👒</div>
-        <div class="product-info">
-          <h3>Headwear</h3>
-          <p>Branded caps, beanies, and hats that get your logo noticed wherever they go.</p>
-          <a href="#" class="product-cta">Learn More →</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">🎯</div>
-        <div class="product-info">
-          <h3>Award Products</h3>
-          <p>Customize awards, plaques, medals, and recognition items for your team.</p>
-          <a href="#" class="product-cta">Learn More →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="services" id="services">
-    <div class="section-header">
-      <h2>Our Services</h2>
-      <p>Complete solutions from concept to delivery</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">✏️</div>
-        <h3>Design & Art</h3>
-        <p>Our creative team helps bring your vision to life with expert design and artwork preparation.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🖨️</div>
+      <div class="card">
         <h3>Screen Printing</h3>
-        <p>High-quality screen printing with vibrant colors and precise details on any apparel.</p>
+        <p>High-quality screen printing for vibrant, lasting designs</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🧵</div>
+      <div class="card">
         <h3>Embroidery</h3>
-        <p>Professional embroidery that adds sophistication and durability to your branded items.</p>
+        <p>Professional embroidery for premium look and feel</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">⚡</div>
-        <h3>Fast Turnaround</h3>
-        <p>Rush orders welcome. We deliver quality on your timeline without compromising excellence.</p>
+      <div class="card">
+        <h3>Promotional Items</h3>
+        <p>Branded bags, drinkware, hats, and more</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">📦</div>
-        <h3>Bulk Orders</h3>
-        <p>Competitive pricing on large quantities for corporate events, trade shows, and campaigns.</p>
+      <div class="card">
+        <h3>Corporate Gifts</h3>
+        <p>Bulk orders for events, conferences, and corporate needs</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🤝</div>
-        <h3>Support</h3>
-        <p>Dedicated support from quote to delivery. We're here to make your project seamless.</p>
+      <div class="card">
+        <h3>Custom Design</h3>
+        <p>Our team helps bring your vision to life</p>
       </div>
     </div>
   </section>
 
-  <section class="reviews-section">
-    <div class="section-header">
-      <h2>Loved by 500+ Happy Clients</h2>
-      <p>See what our customers say about their experience with Custom Werks Graphics</p>
-    </div>
-    <div class="reviews-container">
-      <div class="reviews-scroll" id="reviews-scroll">
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">MC</div>
-            <div class="review-author">
-              <div class="review-name">Maria Chen</div>
-              <div class="review-date">2 weeks ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Absolutely fantastic! The custom hoodies for our company event turned out even better than expected. The print quality is incredible and the team was super professional throughout.</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">JD</div>
-            <div class="review-author">
-              <div class="review-name">James Davis</div>
-              <div class="review-date">3 weeks ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Best promotional products we've ordered! Fast turnaround, exceptional quality, and the team went above and beyond to help us with custom designs. Highly recommend!</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">SR</div>
-            <div class="review-author">
-              <div class="review-name">Sarah Rodriguez</div>
-              <div class="review-date">1 month ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Custom Werks Graphics is the best! Our branded t-shirts look amazing and arrived exactly on time for our trade show. Will definitely order again!</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">MK</div>
-            <div class="review-author">
-              <div class="review-name">Mike Kim</div>
-              <div class="review-date">1 month ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Our corporate gifts were a huge hit at the conference! The embroidery quality is pristine and the bags are really durable. Great value for money.</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">AJ</div>
-            <div class="review-author">
-              <div class="review-name">Amanda Jones</div>
-              <div class="review-date">5 weeks ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Couldn't be happier with our custom baseball caps! The print didn't fade and the fit is perfect. Customer service was exceptional throughout the ordering process.</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">TM</div>
-            <div class="review-author">
-              <div class="review-name">Thomas Martinez</div>
-              <div class="review-date">6 weeks ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Been using Custom Werks for 5 years now. Consistent quality, reliable service, and their design team really helps bring our ideas to life. Highly trusted partner!</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">EL</div>
-            <div class="review-author">
-              <div class="review-name">Emily Liu</div>
-              <div class="review-date">2 months ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Amazing experience from start to finish! The custom mugs for our brand launch were perfect. The team was responsive and the quality exceeded expectations.</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">RW</div>
-            <div class="review-author">
-              <div class="review-name">Robert Williams</div>
-              <div class="review-date">2 months ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Ordered 500 branded backpacks for our corporate event. They handled the bulk order seamlessly with competitive pricing and excellent attention to detail!</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">NP</div>
-            <div class="review-author">
-              <div class="review-name">Nicole Parker</div>
-              <div class="review-date">3 months ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Our event t-shirts came out beautifully! The screen printing is perfectly aligned and the colors are vibrant. This team really knows their craft!</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">CB</div>
-            <div class="review-author">
-              <div class="review-name">Christopher Brown</div>
-              <div class="review-date">3 months ago</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">Fantastic quality and even faster turnaround than promised! The custom polo shirts exceeded our expectations and our team loves wearing them.</div>
-          <span class="review-verified">Verified Purchase</span>
-        </div>
+  <section class="section" id="services">
+    <h2>Why Choose Us</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Quality</h3>
+        <p>Premium materials and expert craftsmanship</p>
       </div>
-    </div>
-    <div class="reviews-trust-badge">
-      <div class="badge-stat">4.9 / 5.0</div>
-      <div class="badge-text">★ Rating based on 500+ verified Google reviews</div>
+      <div class="card">
+        <h3>Speed</h3>
+        <p>Fast turnaround times without sacrificing quality</p>
+      </div>
+      <div class="card">
+        <h3>Expertise</h3>
+        <p>Over 20 years of experience in the industry</p>
+      </div>
     </div>
   </section>
 
-  <section class="lead-section" id="get-quote">
-    <div class="lead-container">
-      <h2>Get Your Free Quote Today</h2>
-      <p>Tell us about your project and we'll provide a personalized quote within 24 hours</p>
-      <form id="quote-form" onsubmit="handleFormSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Your Name *</label>
-            <input type="text" id="name" name="name" required placeholder="John Smith">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required placeholder="john@company.com">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required placeholder="423-756-1144">
-          </div>
-          <div class="form-group">
-            <label for="company">Company Name</label>
-            <input type="text" id="company" name="company" placeholder="Your Company">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="product-type">What are you looking for? *</label>
-          <select id="product-type" name="product-type" required>
-            <option value="">Select a product type</option>
-            <option value="apparel">Custom Apparel (t-shirts, hoodies, polos)</option>
-            <option value="bags">Bags & Backpacks</option>
-            <option value="drinkware">Drinkware (mugs, tumblers, bottles)</option>
-            <option value="gifts">Corporate Gifts</option>
-            <option value="headwear">Headwear (caps, beanies)</option>
-            <option value="awards">Awards & Recognition</option>
-            <option value="other">Something Else</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="description">Project Details *</label>
-          <textarea id="description" name="description" required placeholder="Tell us about your project, quantity needed, timeline, and any special requirements..."></textarea>
-        </div>
-        <div class="form-group">
-          <label for="budget">Estimated Budget</label>
-          <input type="text" id="budget" name="budget" placeholder="e.g., $500 - $1000">
-        </div>
-        <button type="submit" class="button" style="width: 100%;">Get Free Quote</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Custom Werks Graphics</h4>
-        <p>Premium promotional products & screen printing</p>
-        <p style="margin-top: 10px; font-size: 12px; color: #666;">Located in Chattanooga, TN</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <a href="#products">Products</a>
-        <a href="#services">Services</a>
-        <a href="#get-quote">Get Quote</a>
-        <a href="#">Showroom</a>
-      </div>
-      <div class="footer-section">
-        <h4>Contact Us</h4>
-        <a href="tel:4237561144">📞 (423) 756-1144</a>
-        <a href="tel:4232676032">📞 (423) 267-6032</a>
-        <a href="mailto:sales@customwerks.net">📧 sales@customwerks.net</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Custom Werks Graphics. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
+  <footer id="contact">
+    <p>&copy; 2026 Custom Werks Graphics. All rights reserved.</p>
+    <p>📞 (423) 756-1144 | 📧 sales@customwerks.net</p>
   </footer>
 
-  <!-- Chat Button -->
-  <button id="chat-btn" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%); border: none; color: white; font-size: 28px; cursor: pointer; z-index: 999; box-shadow: 0 4px 12px rgba(255,107,53,0.3); transition: all 0.2s;">💬</button>
-
-  <!-- Chat Widget -->
-  <div id="chat-widget" style="position: fixed; bottom: 90px; right: 20px; width: 380px; max-height: 500px; background: #1a1a1a; border: 1px solid #333; border-radius: 12px; display: none; flex-direction: column; z-index: 998; box-shadow: 0 8px 32px rgba(0,0,0,0.5);">
-    <div style="background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%); color: white; padding: 16px; display: flex; justify-content: space-between; align-items: center; border-radius: 12px 12px 0 0;">
-      <span style="font-weight: 600; font-size: 16px;">AI Order Specialist</span>
-      <button id="close-btn" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 0;">✕</button>
+  <!-- CHATBOT -->
+  <button id="chat-button" onclick="toggleChat()">💬</button>
+  <div id="chat-widget">
+    <div id="chat-header">
+      <span>AI Order Specialist</span>
+      <button id="chat-close" onclick="closeChat()">✕</button>
     </div>
-    <div id="messages" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px;"></div>
-    <div style="display: flex; gap: 8px; padding: 12px; border-top: 1px solid #333;">
-      <input type="text" id="input" placeholder="Type your message..." style="flex: 1; background: #0f0f0f; border: 1px solid #333; color: #e0e0e0; padding: 8px 12px; border-radius: 6px; font-family: 'Poppins', sans-serif;">
-      <button id="send-btn" style="background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">Send</button>
+    <div id="chat-messages"></div>
+    <div id="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Type your message...">
+      <button id="chat-send" onclick="sendMessage()">Send</button>
     </div>
   </div>
 
   <script>
-    // FRESH MINIMAL CHATBOT - NO AUTO-CLOSE
     const widget = document.getElementById('chat-widget');
-    const messagesDiv = document.getElementById('messages');
-    const input = document.getElementById('input');
-    const chatBtn = document.getElementById('chat-btn');
-    const closeBtn = document.getElementById('close-btn');
-    const sendBtn = document.getElementById('send-btn');
-
+    const messagesDiv = document.getElementById('chat-messages');
+    const input = document.getElementById('chat-input');
     let messages = [];
-    let needsName = true, needsEmail = true, needsPhone = true;
+    let stage = 'name';
+    let userInfo = {};
 
-    // ONLY close when user clicks close button - NEVER AUTO CLOSE
-    closeBtn.onclick = () => { widget.style.display = 'none'; };
-    chatBtn.onclick = () => { widget.style.display = 'flex'; input.focus(); };
+    function toggleChat() {
+      widget.classList.toggle('open');
+      if (widget.classList.contains('open')) {
+        input.focus();
+      }
+    }
+
+    function openChat() {
+      widget.classList.add('open');
+      input.focus();
+    }
+
+    function closeChat() {
+      widget.classList.remove('open');
+    }
 
     function addMessage(text, isUser) {
-      messages.push({ role: isUser ? 'user' : 'assistant', content: text });
       const msg = document.createElement('div');
-      msg.style.cssText = `padding: 10px 12px; border-radius: 8px; max-width: 85%; word-wrap: break-word; font-size: 14px; ${isUser ? 'align-self: flex-end; background: #ff6b35; color: white;' : 'align-self: flex-start; background: #2a2a2a; color: #e0e0e0;'}`;
+      msg.className = `msg ${isUser ? 'user' : 'bot'}`;
       msg.textContent = text;
       messagesDiv.appendChild(msg);
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    async function callClaude(allMessages) {
+      try {
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: allMessages })
+        });
+        if (!response.ok) throw new Error('API error');
+        const data = await response.json();
+        addMessage(data.content, false);
+        messages.push({ role: 'assistant', content: data.content });
+      } catch (error) {
+        addMessage('Sorry, error connecting. Call (423) 756-1144', false);
+      }
     }
 
     function sendMessage() {
@@ -1209,160 +382,35 @@
       input.value = '';
 
       addMessage(text, true);
+      messages.push({ role: 'user', content: text });
 
-      // Lead capture - ask for name, email, phone FIRST
-      if (needsName) {
-        needsName = false;
-        addMessage(`Thanks ${text}! What's your email? 📧`);
-        return;
-      }
-      if (needsEmail) {
-        needsEmail = false;
-        addMessage(`Got it! And your phone number? 📞`);
-        return;
-      }
-      if (needsPhone) {
-        needsPhone = false;
-        // Now that we have lead info, call Claude API
-        callClaude([...messages], text);
-        return;
-      }
-
-      // After lead capture, use Claude for product questions
-      callClaude([...messages], text);
-    }
-
-    async function callClaude(msgs, currentInput) {
-      sendBtn.disabled = true;
-      try {
-        const response = await fetch('/api/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ messages: msgs })
-        });
-
-        if (!response.ok) throw new Error('API error');
-        const data = await response.json();
-        addMessage(data.content, false);
-      } catch (error) {
-        addMessage('Sorry, error connecting. Call (423) 756-1144 ☎️', false);
-      } finally {
-        sendBtn.disabled = false;
-        input.focus();
+      if (stage === 'name') {
+        userInfo.name = text;
+        stage = 'email';
+        addMessage('Thanks! What\'s your email? 📧', false);
+      } else if (stage === 'email') {
+        userInfo.email = text;
+        stage = 'phone';
+        addMessage('Got it! Your phone number? 📞', false);
+      } else if (stage === 'phone') {
+        userInfo.phone = text;
+        stage = 'order';
+        addMessage('Perfect! Now let me help with your order.', false);
+        callClaude(messages);
+      } else {
+        callClaude(messages);
       }
     }
 
-    // Open on page load
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        widget.style.display = 'flex';
-        addMessage('Hi! What\\'s your name? 👋');
-        input.focus();
-      }, 2000);
-    });
-
-    // Send on Enter or button click
-    input.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
-    sendBtn.addEventListener('click', sendMessage);
-
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const formData = new FormData(document.getElementById('quote-form'));
-      const data = Object.fromEntries(formData);
-
-      console.log('Quote Request Submitted:', data);
-      alert(`Thank you, ${data.name}! We've received your quote request. Our team will contact you within 24 hours at ${data.email} or ${data.phone}.`);
-      document.getElementById('quote-form').reset();
-    }
-    });
-
-    // Auto-open chatbot with announcement on page load
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        if (!hasShownAutoIntro) {
-          hasShownAutoIntro = true;
-          openChat();
-          // Chatbot stays open until user closes it
-        }
-      }, 2000);
-    });
-
-    function sendMessage() {
-      const text = chatInput.value.trim();
-      if (!text || isLoadingMessage) return;
-
-      addMessage(text, true);
-      chatInput.value = '';
-
-      // Add user message to conversation history
-      conversationHistory.push({
-        role: 'user',
-        content: text
-      });
-
-      // Send to Claude API
-      sendToClaudeAPI(conversationHistory);
-    }
-
-    async function sendToClaudeAPI(messages) {
-      isLoadingMessage = true;
-      chatInput.disabled = true;
-
-      try {
-        const response = await fetch('/api/chat', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ messages })
-        });
-
-        if (!response.ok) {
-          const error = await response.json();
-          if (error.message && error.message.includes('API key')) {
-            addMessage('⚠️ The chatbot API needs to be configured. Please add your Claude API key to the Vercel environment variables.');
-          } else {
-            addMessage('Sorry, I encountered an error. Please try again or contact us at (423) 756-1144.');
-          }
-          console.error('API Error:', error);
-          return;
-        }
-
-        const data = await response.json();
-        const assistantMessage = data.content;
-
-        // Add assistant response to conversation history
-        conversationHistory.push({
-          role: 'assistant',
-          content: assistantMessage
-        });
-
-        // Add the assistant's response to the chat
-        addMessage(assistantMessage);
-      } catch (error) {
-        console.error('Error calling Claude API:', error);
-        addMessage('Sorry, I had trouble connecting to the AI service. Please try again or call us at (423) 756-1144.');
-      } finally {
-        isLoadingMessage = false;
-        chatInput.disabled = false;
-        chatInput.focus();
-      }
-    }
-
-    chatInput.addEventListener('keypress', (e) => {
+    input.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') sendMessage();
     });
 
-
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const formData = new FormData(document.getElementById('quote-form'));
-      const data = Object.fromEntries(formData);
-
-      console.log('Quote Request Submitted:', data);
-      alert(`Thank you, ${data.name}! We've received your quote request. Our team will contact you within 24 hours at ${data.email} or ${data.phone}.`);
-      document.getElementById('quote-form').reset();
-    }
+    // Auto-open after 2 seconds
+    setTimeout(() => {
+      openChat();
+      addMessage('Hi! What\'s your name? 👋', false);
+    }, 2000);
   </script>
 </body>
 </html>
