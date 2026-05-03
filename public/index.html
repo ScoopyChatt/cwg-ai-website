@@ -1180,19 +1180,25 @@
 
   <script>
     // FRESH MINIMAL CHATBOT - NO AUTO-CLOSE
-    const widget = document.getElementById('chat-widget');
-    const messagesDiv = document.getElementById('messages');
-    const input = document.getElementById('input');
-    const chatBtn = document.getElementById('chat-btn');
-    const closeBtn = document.getElementById('close-btn');
-    const sendBtn = document.getElementById('send-btn');
+    document.addEventListener('DOMContentLoaded', () => {
+      const widget = document.getElementById('chat-widget');
+      const messagesDiv = document.getElementById('messages');
+      const input = document.getElementById('input');
+      const chatBtn = document.getElementById('chat-btn');
+      const closeBtn = document.getElementById('close-btn');
+      const sendBtn = document.getElementById('send-btn');
 
-    let messages = [];
-    let needsName = true, needsEmail = true, needsPhone = true;
+      if (!chatBtn || !closeBtn || !widget) {
+        console.error('Chat elements not found!');
+        return;
+      }
 
-    // ONLY close when user clicks close button - NEVER AUTO CLOSE
-    closeBtn.onclick = () => { widget.style.display = 'none'; };
-    chatBtn.onclick = () => { widget.style.display = 'flex'; input.focus(); };
+      let messages = [];
+      let needsName = true, needsEmail = true, needsPhone = true;
+
+      // ONLY close when user clicks close button - NEVER AUTO CLOSE
+      closeBtn.onclick = () => { widget.style.display = 'none'; };
+      chatBtn.onclick = () => { widget.style.display = 'flex'; input.focus(); };
 
     function addMessage(text, isUser) {
       messages.push({ role: isUser ? 'user' : 'assistant', content: text });
@@ -1264,33 +1270,25 @@
     // Send on Enter or button click
     input.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
     sendBtn.addEventListener('click', sendMessage);
-      if (messages.children.length === 0) {
-        addMessage('👋 Welcome to Custom Werks Graphics! I\'m your AI order specialist. I\'m here to help you design the perfect promotional products for your brand. What\'s your name?');
-      }
-      setTimeout(() => chatInput.focus(), 100);
+
+    // Open on page load
+    setTimeout(() => {
+      widget.style.display = 'flex';
+      addMessage('Hi! What\'s your name? 👋');
+      input.focus();
+    }, 2000);
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const formData = new FormData(document.getElementById('quote-form'));
+      const data = Object.fromEntries(formData);
+
+      console.log('Quote Request Submitted:', data);
+      alert(`Thank you, ${data.name}! We've received your quote request. Our team will contact you within 24 hours at ${data.email} or ${data.phone}.`);
+      document.getElementById('quote-form').reset();
     }
-
-    function closeChat() {
-      chatWidget.classList.remove('open');
-    }
-
-    function addMessage(text, isUser = false, isButton = false) {
-      const div = document.createElement('div');
-      div.className = `message ${isUser ? 'user' : 'bot'}`;
-
-      if (isButton) {
-        div.innerHTML = `<div class="button-group">${text}</div>`;
-      } else {
-        div.innerHTML = `<div class="bubble">${text}</div>`;
-      }
-
-      messages.appendChild(div);
-      messages.scrollTop = messages.scrollHeight;
-    }
-
-    let conversationHistory = [];
-    let isLoadingMessage = false;
-    let hasShownAutoIntro = false;
+    });
+  </script>
 
     // Auto-open chatbot with announcement on page load
     window.addEventListener('load', () => {
