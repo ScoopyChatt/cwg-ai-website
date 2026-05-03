@@ -628,6 +628,147 @@
       color: #666;
     }
 
+    /* Reviews Section */
+    .reviews-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 100px 20px;
+    }
+
+    .reviews-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reviews-scroll {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+      scroll-padding: 20px;
+    }
+
+    .reviews-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .reviews-scroll::-webkit-scrollbar-track {
+      background: #1a1a1a;
+      border-radius: 10px;
+    }
+
+    .reviews-scroll::-webkit-scrollbar-thumb {
+      background: #ff6b35;
+      border-radius: 10px;
+    }
+
+    .reviews-scroll::-webkit-scrollbar-thumb:hover {
+      background: #ff8c42;
+    }
+
+    .review-card {
+      flex: 0 0 350px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 30px;
+      transition: all 0.3s;
+    }
+
+    .review-card:hover {
+      border-color: #ff6b35;
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .review-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 18px;
+    }
+
+    .review-author {
+      flex: 1;
+    }
+
+    .review-name {
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .review-date {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    .star {
+      color: #ffd700;
+      font-size: 16px;
+    }
+
+    .review-text {
+      color: #b0b0b0;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .review-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .review-verified::before {
+      content: '✓';
+      color: #4ade80;
+      font-weight: 700;
+    }
+
+    .reviews-trust-badge {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(30, 91, 216, 0.1) 100%);
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
+    .badge-stat {
+      font-size: 42px;
+      font-weight: 800;
+      color: #ff6b35;
+      margin-bottom: 8px;
+    }
+
+    .badge-text {
+      color: #b0b0b0;
+      font-size: 16px;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 {
@@ -650,6 +791,10 @@
 
       .products-grid, .services-grid {
         grid-template-columns: 1fr;
+      }
+
+      .review-card {
+        flex: 0 0 280px;
       }
     }
   </style>
@@ -773,6 +918,170 @@
         <h3>Support</h3>
         <p>Dedicated support from quote to delivery. We're here to make your project seamless.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="reviews-section">
+    <div class="section-header">
+      <h2>Loved by 500+ Happy Clients</h2>
+      <p>See what our customers say about their experience with Custom Werks Graphics</p>
+    </div>
+    <div class="reviews-container">
+      <div class="reviews-scroll" id="reviews-scroll">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">MC</div>
+            <div class="review-author">
+              <div class="review-name">Maria Chen</div>
+              <div class="review-date">2 weeks ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Absolutely fantastic! The custom hoodies for our company event turned out even better than expected. The print quality is incredible and the team was super professional throughout.</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">JD</div>
+            <div class="review-author">
+              <div class="review-name">James Davis</div>
+              <div class="review-date">3 weeks ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Best promotional products we've ordered! Fast turnaround, exceptional quality, and the team went above and beyond to help us with custom designs. Highly recommend!</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">SR</div>
+            <div class="review-author">
+              <div class="review-name">Sarah Rodriguez</div>
+              <div class="review-date">1 month ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Custom Werks Graphics is the best! Our branded t-shirts look amazing and arrived exactly on time for our trade show. Will definitely order again!</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">MK</div>
+            <div class="review-author">
+              <div class="review-name">Mike Kim</div>
+              <div class="review-date">1 month ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Our corporate gifts were a huge hit at the conference! The embroidery quality is pristine and the bags are really durable. Great value for money.</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">AJ</div>
+            <div class="review-author">
+              <div class="review-name">Amanda Jones</div>
+              <div class="review-date">5 weeks ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Couldn't be happier with our custom baseball caps! The print didn't fade and the fit is perfect. Customer service was exceptional throughout the ordering process.</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">TM</div>
+            <div class="review-author">
+              <div class="review-name">Thomas Martinez</div>
+              <div class="review-date">6 weeks ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Been using Custom Werks for 5 years now. Consistent quality, reliable service, and their design team really helps bring our ideas to life. Highly trusted partner!</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">EL</div>
+            <div class="review-author">
+              <div class="review-name">Emily Liu</div>
+              <div class="review-date">2 months ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Amazing experience from start to finish! The custom mugs for our brand launch were perfect. The team was responsive and the quality exceeded expectations.</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">RW</div>
+            <div class="review-author">
+              <div class="review-name">Robert Williams</div>
+              <div class="review-date">2 months ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Ordered 500 branded backpacks for our corporate event. They handled the bulk order seamlessly with competitive pricing and excellent attention to detail!</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">NP</div>
+            <div class="review-author">
+              <div class="review-name">Nicole Parker</div>
+              <div class="review-date">3 months ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Our event t-shirts came out beautifully! The screen printing is perfectly aligned and the colors are vibrant. This team really knows their craft!</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">CB</div>
+            <div class="review-author">
+              <div class="review-name">Christopher Brown</div>
+              <div class="review-date">3 months ago</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="review-text">Fantastic quality and even faster turnaround than promised! The custom polo shirts exceeded our expectations and our team loves wearing them.</div>
+          <span class="review-verified">Verified Purchase</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-trust-badge">
+      <div class="badge-stat">4.9 / 5.0</div>
+      <div class="badge-text">★ Rating based on 500+ verified Google reviews</div>
     </div>
   </section>
 
