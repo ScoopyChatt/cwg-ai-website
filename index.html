@@ -1,201 +1,645 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CWG AI Website – AI Lead Capture + Order Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Werks Graphics – Screen Printing, Embroidery & Promo Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --navy:#0e1b3b;        /* deep navy sections */
-      --blue:#1e5bd8;        /* bright blue accents */
-      --gold:#c59a00;        /* subtle gold highlights */
-      --bg:#f7f8fb;           /* light background */
-      --card:#ffffff;          
-      --shadow:0 8px 24px rgba(20,30,60,.12);
-      --radius:14px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:#0b1020;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto;}
-    a{color:inherit;text-decoration:none}
-    header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter: saturate(180%) blur(6px);z-index:50}
-    nav{display:flex;gap:28px;align-items:center;max-width:1200px;margin:0 auto;padding:18px 20px}
-    nav a{color:#0a1a3a;font-weight:600;letter-spacing:.2px}
-    .logo{font-weight:800;color:var(--blue);font-size:20px}
-    .spacer{flex:1}
-    .hero{padding:72px 20px 70px;background:linear-gradient(#f9fbff, #fff);}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    .grid{display:grid;gap:22px}
-    .grid-3{grid-template-columns:repeat(3, 1fr)}
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #eef2f7;padding:22px;}
-    .section{padding:60px 0}
-    h1,h2,h3{margin:0 0 12px}
-    h1{font-size:40px;line-height:1.15}
-    p{line-height:1.6;color:#324056}
-    .badge-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .badge{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:8px 14px;font-weight:600;font-size:12px;color:#163056}
-    /* Floating Chat */
-    #cwg-chat{position:fixed;right:22px;bottom:22px;width:520px;max-width:95vw;background:#fff;border-radius:18px;box-shadow:0 20px 40px rgba(14,22,60,.25);overflow:hidden;border:1px solid #e6e8f0;z-index:100}
-    #cwg-chat-header{background:var(--navy);color:white;padding:14px 16px;display:flex;align-items:center;gap:12px;font-weight:700}
-    #cwg-chat-header .badge{background:gold; color:#1c1c1c; font-weight:700; border-radius:999px; padding:4px 10px; font-size:12px}
-    #cwg-chat-body{padding:14px 16px;height:360px;overflow:auto;background:#fbfeff}
-    .msg{display:flex;margin:8px 0;gap:8px}
-    .bot .bubble{background:#f1f4f9;border-radius:14px;padding:12px 14px;max-width:90%;border:1px solid #e6eaf2;box-shadow:0 1px 0 rgba(0,0,0,.03)}
-    .user{justify-content:flex-end}
-    .user .bubble{background:var(--blue);color:white;border-radius:14px;padding:12px 14px;max-width:90%}
-    .bubble p{margin:0}
-    .hint{color:#5b6b8a;font-size:12px}
-    .cta{margin-top:6px}
-    .button{padding:12px 16px;border-radius:10px;border:0;background:var(--blue);color:white;font-weight:700;cursor:pointer}
-    .button.secondary{background:#fff;color:var(--navy);border:1px solid #d9e6ff}
-    .section-title{font-size:28px;margin-bottom:8px}
-    /* Hero nav anchors placeholder to demonstrate multi-section feel */
-    section{scroll-margin-top:80px}
-    /* Ensure chat starts expanded visually */
-    #cwg-chat.expanded{height:auto}
-    /* Nice responsive tweaks for smaller screens */
-    @media (max-width: 900px){
-      .grid{grid-template-columns:1fr}
-      #cwg-chat{width:92vw}
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #e0e0e0;
+      background: #1a1a1a;
+    }
+
+    /* Header & Nav */
+    header {
+      background: #252525;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 30px;
+      flex: 1;
+      margin: 0;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #e0e0e0;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-menu a:hover {
+      color: #4da6ff;
+    }
+
+    .nav-contact {
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #b0b0b0;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .button:hover {
+      background: #0052a3;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: #4da6ff;
+      border: 2px solid #4da6ff;
+      padding: 12px 30px;
+    }
+
+    .button.secondary:hover {
+      background: rgba(77, 166, 255, 0.1);
+    }
+
+    /* Services Section */
+    .services {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .services h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-item {
+      padding: 30px;
+      background: #252525;
+      border-radius: 4px;
+      text-align: center;
+      border: 1px solid #333;
+    }
+
+    .service-item h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .service-item p {
+      font-size: 14px;
+      color: #b0b0b0;
+      line-height: 1.6;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: #252525;
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .cta p {
+      font-size: 16px;
+      color: #b0b0b0;
+      margin-bottom: 30px;
+    }
+
+    /* Contact Section */
+    .contact {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .contact-card {
+      padding: 30px;
+    }
+
+    .contact-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .contact-card p {
+      color: #4da6ff;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0a0a0a;
+      color: #e0e0e0;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 13px;
+      border-top: 1px solid #333;
+    }
+
+    footer a {
+      color: #4da6ff;
+      text-decoration: none;
+    }
+
+    /* Chat Widget */
+    #chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      background: #0066cc;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      z-index: 100;
+      transition: all 0.3s;
+    }
+
+    #chat-toggle:hover {
+      background: #0052a3;
+      box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
+      transform: scale(1.1);
+    }
+
+    #chat-widget {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 380px;
+      max-width: 95vw;
+      background: #252525;
+      border-radius: 8px;
+      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.5);
+      display: none;
+      flex-direction: column;
+      z-index: 100;
+      font-size: 14px;
+      max-height: 500px;
+      border: 1px solid #333;
+    }
+
+    #chat-widget.open {
+      display: flex;
+    }
+
+    #chat-header {
+      background: #0066cc;
+      color: white;
+      padding: 16px;
+      border-radius: 8px 8px 0 0;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #chat-header::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: #4ade80;
+      border-radius: 50%;
+    }
+
+    #close-chat {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      padding: 0;
+    }
+
+    #chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #1a1a1a;
+      min-height: 200px;
+    }
+
+    .message {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .message.user {
+      justify-content: flex-end;
+    }
+
+    .bubble {
+      max-width: 70%;
+      padding: 10px 14px;
+      border-radius: 6px;
+      line-height: 1.4;
+    }
+
+    .message.bot .bubble {
+      background: #333;
+      color: #e0e0e0;
+      border: 1px solid #444;
+    }
+
+    .message.user .bubble {
+      background: #0066cc;
+      color: white;
+    }
+
+    #chat-input-area {
+      padding: 12px;
+      border-top: 1px solid #333;
+      display: flex;
+      gap: 8px;
+    }
+
+    #chat-input {
+      flex: 1;
+      padding: 10px 12px;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #333;
+      color: #e0e0e0;
+    }
+
+    #chat-input:focus {
+      outline: none;
+      border-color: #0066cc;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 8px 0;
+    }
+
+    .button-group button {
+      padding: 8px 12px;
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+      color: #e0e0e0;
+    }
+
+    .button-group button:hover {
+      background: #0066cc;
+      color: white;
+      border-color: #0066cc;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .nav-menu {
+        gap: 15px;
+        font-size: 12px;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      .services h2,
+      .cta h2,
+      .contact h2 {
+        font-size: 24px;
+      }
+
+      #chat-widget {
+        width: 90vw;
+        max-height: 400px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">CWG AI Website</div>
-      <div class="spacer"></div>
-      <a href="#home">Home</a>
-      <a href="#screen-printing">Screen Printing</a>
-      <a href="#embroidery">Embroidery</a>
-      <a href="#promo">Promo Products</a>
-      <a href="#corporate">Corporate Gifts</a>
-      <a href="#apparel">Apparel</a>
-      <a href="#art-help">Art Help</a>
-      <a href="#contact">Contact</a>
+      <div class="logo">CWG</div>
+      <div class="nav-menu">
+        <a href="#screen-printing">Screen Printing</a>
+        <a href="#embroidery">Embroidery</a>
+        <a href="#promo">Promo Products</a>
+        <a href="#corporate">Corporate Gifts</a>
+      </div>
+      <a href="tel:4237561144" class="nav-contact">423.756.1144</a>
     </nav>
   </header>
-  <main id="home" class="hero">
-    <section class="container">
-      <div class="grid" style="grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;">
-        <div>
-          <h1 style="font-size:48px;line-height:1.08;margin-bottom:12px">Custom Apparel & Promo Products, Guided by AI</h1>
-          <p style="font-size:18px; color:#324056;max-width:720px">Tell us what you need. The CWG AI Assistant captures contact info, project type, artwork needs, quantity, deadline, and budget level so sales can follow up faster with better information.</p>
-          <div style="display:flex;gap:12px;margin-top:16px">
-            <button class="button" onclick="startOrder()">Start AI Order</button>
-            <button class="button secondary" onclick="getIdeas()">Get Product Ideas</button>
-          </div>
-          <div class="badge-row" aria-label="trust badges" style="margin-top:20px">
-            <span class="badge">Screen Printing</span>
-            <span class="badge">Embroidery</span>
-            <span class="badge">Promo Products</span>
-            <span class="badge">Corporate Gifts</span>
-            <span class="badge">Artwork Help</span>
-          </div>
-        </div>
-        <div class="card" style="padding:20px;min-height:240px;display:flex;flex-direction:column;justify-content:center;align-items:stretch;background:linear-gradient(#fff,#f7fbff);border:1px solid #eef2f7">
-          <div style="font-weight:700;margin-bottom:6px">Overview</div>
-          <p style="margin:0">A polished, customer-facing AI that captures leads and guides orders—without feeling like a backend tool. Expanded chat is front-and-center as the hero feature.</p>
-        </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Quality Custom Apparel & Products</h1>
+      <p>Screen printing, embroidery, promotional products, and corporate gifts for any business need. Fast turnaround. Excellent results.</p>
+      <a href="#contact" class="button">Get Started</a>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>What We Do</h2>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>Screen Printing</h3>
+        <p>High-quality apparel graphics for events, teams, and retail. Fast turnaround on orders of all sizes.</p>
       </div>
-    </section>
-  </main>
-
-  <section id="screen-printing" class="section container" style="padding-top:40px">
-    <h2 class="section-title">Screen Printing</h2>
-    <p>High-impact apparel graphics, event merch, and team wear with fast turnaround.</p>
-  </section>
-
-  <section id="embroidery" class="section container" style="background:#fff">
-    <h2 class="section-title">Embroidery</h2>
-    <p>Premium embroidery for polos, hats, uniforms, and corporate wear.</p>
-  </section>
-
-  <section id="promo" class="section container" style="background:#f5f7fb">
-    <h2 class="section-title">Promo Products / Ad Specialty</h2>
-    <p>Drinkware, bags, pens, awards, and trade show swag with lightweight production.</p>
-  </section>
-
-  <section id="corporate" class="section container">
-    <h2 class="section-title">Corporate Gifts</h2>
-    <p>Branded gifts that reinforce your company identity and appreciation programs.</p>
-  </section>
-
-  <section id="apparel" class="section container" style="background:#fff">
-    <h2 class="section-title">Apparel</h2>
-    <p>From classic tees to performance wear with quality print and embroidery.</p>
-  </section>
-
-  <section id="art-help" class="section container" style="background:#f7f9fc">
-    <h2 class="section-title">Art Upload / Design Help</h2>
-    <p>Upload artwork or get professional design assistance to ensure print-ready files.</p>
-  </section>
-
-  <section id="contact" class="section container" style="background:#fff">
-    <h2 class="section-title">Contact / Start Order</h2>
-    <p>Start your AI-assisted order and let CWG guide you from concept to completion.</p>
-  </section>
-
-  <section id="ideas" class="section container" style="background:#f5f7fb; padding-top:0">
-    <h2 class="section-title">Not Sure What to Order? Ask for Ideas.</h2>
-    <p>Visitors can tell the AI their audience, event, budget, and deadline, and the assistant suggests product directions.</p>
-    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:8px">
-      <div class="card"><strong>Best Sellers</strong><p>Popular, reliable options that sell well for most audiences.</p></div>
-      <div class="card"><strong>Trade Shows</strong><p>Memorable giveaways and stage-ready items under budget.</p></div>
-      <div class="card"><strong>Sports Teams</strong><p>Team gear and spirit wear ideas that travel well.</p></div>
-      <div class="card"><strong>Schools</strong><p>School spirit wear and fundraising-friendly items.</p></div>
-      <div class="card"><strong>Corporate Gifts</strong><p>Thoughtful executive gifts with branding.</p></div>
-      <div class="card"><strong>Drinkware</strong><p>Quality mugs, tumblers, and water bottles.</p></div>
-      <div class="card"><strong>Headwear</strong><p>Caps, beanies, and embroidered hats.</p></div>
-      <div class="card"><strong>Apparel</strong><p>Shirts, hoodies, jackets with strong prints.</p></div>
-      <div class="card"><strong>Construction</strong><p>Durable items engineered for tough jobsites.</p></div>
-      <div class="card"><strong>Healthcare</strong><p>Safe, compliant branded items for clinics and staff.</p></div>
+      <div class="service-item">
+        <h3>Embroidery</h3>
+        <p>Premium embroidered polos, hats, uniforms, and corporate wear with precise detail and durability.</p>
+      </div>
+      <div class="service-item">
+        <h3>Promo Products</h3>
+        <p>Branded drinkware, bags, pens, awards, and trade show giveaways. Low minimums available.</p>
+      </div>
+      <div class="service-item">
+        <h3>Corporate Gifts</h3>
+        <p>Thoughtfully branded gifts for clients and employees. Reinforces your company identity.</p>
+      </div>
+      <div class="service-item">
+        <h3>Apparel</h3>
+        <p>T-shirts, hoodies, jackets, and performance wear with expert screen printing and embroidery.</p>
+      </div>
+      <div class="service-item">
+        <h3>Design Help</h3>
+        <p>Upload your artwork or let our team help prepare print-ready files from your ideas.</p>
+      </div>
     </div>
   </section>
 
-  <section id="contact-cta" class="section container" style="background:#fff">
-    <h2 class="section-title">Final CTA</h2>
-    <p>Ready to Make Quote Requests Easier?</p>
-    <p class="hint">Start with an AI-guided request that captures the right information before the sales team follows up.</p>
-    <div style="display:flex;gap:12px;margin-top:6px">
-      <button class="button" onclick="startOrder()">Start Your AI-Guided Quote Request</button>
-      <button class="button secondary" onclick="getIdeas()">Ask for Product Ideas</button>
+  <section class="cta" id="contact">
+    <div class="cta-content">
+      <h2>Ready to Order?</h2>
+      <p>Contact us to discuss your project, get a quote, and start your custom order.</p>
+      <a href="tel:4237561144" class="button">Call Us: 423.756.1144</a>
+      <p style="margin-top: 20px; font-size: 14px; color: #b0b0b0;">Or email us at sales@customwerks.net</p>
     </div>
   </section>
 
-  <footer class="section container" style="background:#fff;text-align:center;padding:40px 20px">
+  <footer>
     <div>Custom Werks Graphics</div>
-    <div>Screen Printing · Embroidery · Promotional Products · Corporate Gifts · Art Help</div>
-    <div style="margin-top:8px;font-size:12px;color:#5b6b8a">AI ordering experience concept prepared for demonstration.</div>
-    <div style="margin-top:6px;font-size:12px;color:#5b6b8a">Contact: 423.756.1144 | sales@customwerks.net</div>
+    <div style="margin-top: 10px;">Screen Printing · Embroidery · Promotional Products · Corporate Gifts</div>
+    <div style="margin-top: 15px; color: #999;">423.756.1144 | sales@customwerks.net</div>
   </footer>
 
-  <!-- Floating Chat Widget -->
-  <div id="cwg-chat" class="expanded" aria-label="CWG AI Order Assistant">
-    <div id="cwg-chat-header">
-      <span style="display:inline-block;width:12px;height:12px;background:#4ade80;border-radius:50%"></span>
-      <span>CWG AI Order Assistant</span>
-      <span class="spacer" style="flex:1"></span>
-      <span class="badge">AI Lead Capture + Order Assistant</span>
+  <!-- Chat Toggle Button -->
+  <button id="chat-toggle" onclick="toggleChat()">💬</button>
+
+  <!-- Chat Widget -->
+  <div id="chat-widget">
+    <div id="chat-header">
+      <span>👋 Need Help?</span>
+      <button id="close-chat" onclick="closeChat()">✕</button>
     </div>
-    <div id="cwg-chat-body">
-      <div class="msg bot"><div class="bubble"><p>Hi — I can help you start a custom order, find the right product, or get your project ready for the CWG team. First, I’ll need your name, email, and phone number so we can follow up with accurate pricing and next steps.</p></div></div>
-      <div class="msg bot"><div class="bubble"><p>What type of project can I help you with today?</p></div></div>
-      <div class="msg bot"><div class="bubble"><p>Screen Printing</p></div></div>
-      <div class="msg bot"><div class="bubble"><p>Embroidery</p></div></div>
-      <div class="msg bot"><div class="bubble"><p>Ad Specialty / Promotional Item</p></div></div>
+    <div id="chat-messages"></div>
+    <div id="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Type your message..." />
+      <button onclick="sendMessage()" style="padding: 10px 16px; background: #0066cc; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Send</button>
     </div>
   </div>
 
   <script>
-    function startOrder(){
-      // Scroll to contact section as a demo start
-      document.querySelector('#contact').scrollIntoView({behavior:'smooth'});
+    const chatState = {
+      stage: 'greeting',
+      data: {
+        name: '',
+        email: '',
+        phone: '',
+        projectType: '',
+        description: ''
+      }
+    };
+
+    const messages = document.getElementById('chat-messages');
+    const chatWidget = document.getElementById('chat-widget');
+
+    function toggleChat() {
+      if (chatWidget.classList.contains('open')) {
+        closeChat();
+      } else {
+        openChat();
+      }
     }
-    function getIdeas(){
-      // Simple demo ideas panel; could be extended to show notional ideas
-      alert('Not sure what to order? Ask for ideas: Best Sellers, Trade Shows, Sports Teams, Schools, Corporate Gifts, Drinkware, Headwear, Apparel, Construction, Healthcare.');
+
+    function openChat() {
+      chatWidget.classList.add('open');
+      if (messages.children.length === 0) {
+        addMessage('Hi! 👋 Can I help you with an order or quote today?');
+      }
+      setTimeout(() => document.getElementById('chat-input').focus(), 100);
     }
+
+    function closeChat() {
+      chatWidget.classList.remove('open');
+    }
+
+    function addMessage(text, isUser = false, isButton = false) {
+      const div = document.createElement('div');
+      div.className = `message ${isUser ? 'user' : 'bot'}`;
+
+      if (isButton) {
+        div.innerHTML = `<div class="button-group">${text}</div>`;
+      } else {
+        div.innerHTML = `<div class="bubble">${text}</div>`;
+      }
+
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      addMessage(text, true);
+      input.value = '';
+      handleResponse(text);
+    }
+
+    function handleResponse(userMessage) {
+      setTimeout(() => {
+        if (chatState.stage === 'greeting') {
+          addMessage('Great! I can help. What\'s your name?');
+          chatState.stage = 'collecting_name';
+        }
+        else if (chatState.stage === 'collecting_name') {
+          chatState.data.name = userMessage;
+          addMessage(`Thanks ${chatState.data.name}! What\'s your email?`);
+          chatState.stage = 'collecting_email';
+        }
+        else if (chatState.stage === 'collecting_email') {
+          chatState.data.email = userMessage;
+          addMessage('And your phone number?');
+          chatState.stage = 'collecting_phone';
+        }
+        else if (chatState.stage === 'collecting_phone') {
+          chatState.data.phone = userMessage;
+          addMessage('Perfect! What type of project do you need?');
+          addMessage(
+            '<button onclick="selectProject(\'Screen Printing\')">Screen Printing</button>' +
+            '<button onclick="selectProject(\'Embroidery\')">Embroidery</button>' +
+            '<button onclick="selectProject(\'Promo Products\')">Promo Products</button>' +
+            '<button onclick="selectProject(\'Corporate Gifts\')">Corporate Gifts</button>',
+            false,
+            true
+          );
+          chatState.stage = 'collecting_type';
+        }
+        else if (chatState.stage === 'collecting_type') {
+          chatState.data.projectType = userMessage;
+          addMessage(`Tell me more about your ${chatState.data.projectType} order.`);
+          chatState.stage = 'collecting_description';
+        }
+        else if (chatState.stage === 'collecting_description') {
+          chatState.data.description = userMessage;
+          addMessage(
+            `Got it! Here's your info:\n\n` +
+            `<b>Name:</b> ${chatState.data.name}\n` +
+            `<b>Email:</b> ${chatState.data.email}\n` +
+            `<b>Phone:</b> ${chatState.data.phone}\n` +
+            `<b>Project:</b> ${chatState.data.projectType}\n` +
+            `<b>Details:</b> ${chatState.data.description}\n\n` +
+            `Our team will contact you within 24 hours with a quote!`
+          );
+          chatState.stage = 'complete';
+        }
+      }, 300);
+    }
+
+    function selectProject(type) {
+      chatState.data.projectType = type;
+      addMessage(type, true);
+      addMessage(`Tell me more about your ${type} order.`);
+      chatState.stage = 'collecting_description';
+    }
+
+    document.getElementById('chat-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
   </script>
 </body>
 </html>
