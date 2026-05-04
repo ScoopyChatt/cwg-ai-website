@@ -3,132 +3,797 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Werks Graphics</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Custom Werks Graphics | Premium Branded Products & Apparel | Chattanooga</title>
+  <meta name="description" content="38 years of excellence in branded apparel, embroidery, screen printing, and promotional products. Custom Werks Graphics delivers premium solutions for businesses, teams, and organizations.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
+    :root {
+      --primary: #ff6b35;
+      --primary-dark: #e55a24;
+      --secondary: #1e5bd8;
+      --dark: #0f0f0f;
+      --light: #f8f9fa;
+      --text: #2d3436;
+      --text-light: #636e72;
+      --border: #dfe6e9;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0f0f0f;
-      color: #e0e0e0;
+      color: var(--text);
+      line-height: 1.6;
+      background: #ffffff;
     }
+
+    /* HEADER & NAVIGATION */
     header {
-      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-      border-bottom: 2px solid #ff6b35;
-      padding: 20px;
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      padding: 16px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
+
     nav {
       max-width: 1400px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 40px;
     }
+
     .logo {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 800;
-      color: #fff;
+      color: var(--dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      flex-shrink: 0;
     }
+
+    .logo span {
+      color: var(--primary);
+    }
+
     .nav-menu {
       display: flex;
-      gap: 30px;
       list-style: none;
+      gap: 8px;
+      flex: 1;
+      justify-content: center;
     }
+
     .nav-menu a {
-      color: #e0e0e0;
+      color: var(--text);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.2s;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
     }
+
     .nav-menu a:hover {
-      color: #ff6b35;
+      color: var(--primary);
+      background: rgba(255, 107, 53, 0.1);
     }
-    .hero {
-      background: linear-gradient(135deg, #1e5bd8 0%, #ff6b35 100%);
-      padding: 120px 20px;
-      text-align: center;
+
+    .nav-cta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-left: auto;
     }
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .hero h1 {
-      font-size: 64px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 40px;
-      color: #f0f0f0;
-    }
-    .btn {
+
+    .btn-primary {
       display: inline-block;
-      padding: 16px 40px;
-      background: #ff6b35;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
       color: white;
       text-decoration: none;
       border-radius: 50px;
-      font-weight: 700;
+      font-weight: 600;
       border: none;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      white-space: nowrap;
     }
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(255, 107, 53, 0.3);
     }
-    .section {
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 12px 28px;
+      background: transparent;
+      color: var(--secondary);
+      text-decoration: none;
+      border: 2px solid var(--secondary);
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .btn-secondary:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      margin-top: 80px;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
       max-width: 1400px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      font-weight: 800;
+    }
+
+    .hero-text h1 .highlight {
+      color: var(--primary);
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: var(--text-light);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta .btn-primary,
+    .hero-cta .btn-secondary {
+      padding: 16px 40px;
+      font-size: 16px;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 10px, transparent 10px, transparent 20px);
+      animation: slide 20s linear infinite;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    /* TRUST SECTION */
+    .trust {
       padding: 80px 20px;
+      background: white;
+      position: relative;
     }
-    .section h2 {
-      font-size: 48px;
+
+    .trust-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
       text-align: center;
-      margin-bottom: 60px;
-      color: #fff;
     }
-    .grid {
+
+    .trust-stat {
+      padding: 32px;
+    }
+
+    .trust-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .trust-stat-label {
+      color: var(--text-light);
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    /* SERVICES SECTION */
+    .services {
+      padding: 100px 20px;
+      background: var(--light);
+    }
+
+    .section-header {
+      max-width: 1400px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 5vw, 56px);
+      color: var(--dark);
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      max-width: 1400px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
+      gap: 32px;
     }
-    .card {
-      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+
+    .service-card {
+      background: white;
       padding: 40px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
       border-radius: 12px;
-      border: 1px solid #333;
-      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      margin-bottom: 20px;
     }
-    .card:hover {
-      transform: translateY(-10px);
-      border-color: #ff6b35;
-      box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--dark);
+      margin-bottom: 12px;
+      font-weight: 700;
     }
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-      color: #fff;
+
+    .service-card p {
+      color: var(--text-light);
+      margin-bottom: 24px;
+      line-height: 1.8;
     }
-    .card p {
-      color: #b0b0b0;
-      line-height: 1.6;
+
+    .service-card a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
-    footer {
-      background: #1a1a1a;
-      border-top: 1px solid #333;
-      padding: 40px 20px;
+
+    .service-card a:hover {
+      gap: 12px;
+    }
+
+    /* HOW IT WORKS */
+    .process {
+      padding: 100px 20px;
+      background: white;
+    }
+
+    .process-steps {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+      z-index: 0;
+    }
+
+    @media (max-width: 768px) {
+      .process-steps::before {
+        display: none;
+      }
+    }
+
+    .step {
+      position: relative;
+      z-index: 1;
+      padding: 32px;
+      background: white;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 800;
+      margin: 0 auto 20px;
+    }
+
+    .step h3 {
       text-align: center;
-      color: #666;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--dark);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .step p {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* CUSTOMER TYPES */
+    .solutions {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+    }
+
+    .solutions-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .solution-item {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .solution-item:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .solution-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    /* CATALOG SECTION */
+    .catalog-cta {
+      padding: 120px 20px;
+      background: linear-gradient(135deg, var(--secondary) 0%, #1e3a8a 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .catalog-cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .catalog-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 5vw, 56px);
+      margin-bottom: 24px;
+      font-weight: 800;
+    }
+
+    .catalog-cta p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    .catalog-link {
+      display: inline-block;
+      padding: 16px 48px;
+      background: white;
+      color: var(--secondary);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    .catalog-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    /* AI ASSISTANT SECTION */
+    .ai-section {
+      padding: 100px 20px;
+      background: white;
+    }
+
+    .ai-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .ai-image {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .ai-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 48px);
+      color: var(--dark);
+      margin-bottom: 24px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .ai-text p {
+      font-size: 16px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .ai-text ul {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .ai-text li {
+      padding: 12px 0;
+      padding-left: 32px;
+      position: relative;
+      color: var(--text-light);
+    }
+
+    .ai-text li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    /* PORTFOLIO SECTION */
+    .portfolio {
+      padding: 100px 20px;
+      background: var(--light);
+    }
+
+    .portfolio-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .portfolio-item {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:nth-child(2) {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .portfolio-item:nth-child(3) {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .portfolio-item:nth-child(4) {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    .portfolio-item:nth-child(5) {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+
+    .portfolio-item:nth-child(6) {
+      background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .portfolio-item-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      color: white;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      padding: 100px 20px;
+      background: white;
+    }
+
+    .about-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 5vw, 56px);
+      color: var(--dark);
+      margin-bottom: 32px;
+      font-weight: 800;
+    }
+
+    .about-content p {
+      font-size: 18px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+      line-height: 1.9;
+    }
+
+    .experience-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
+      color: white;
+      padding: 24px 40px;
+      border-radius: 50px;
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 800;
+      margin-top: 24px;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      padding: 120px 20px;
+      background: linear-gradient(135deg, var(--dark) 0%, #2d3436 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .final-cta-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .final-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 5vw, 56px);
+      margin-bottom: 32px;
+      font-weight: 800;
+    }
+
+    .final-cta p {
+      font-size: 18px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .final-cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .final-cta .btn-primary {
+      padding: 16px 40px;
+      font-size: 16px;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
+    }
+
+    .final-cta .btn-secondary {
+      padding: 16px 40px;
+      font-size: 16px;
+      border-color: white;
+      color: white;
+    }
+
+    .final-cta .btn-secondary:hover {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000000;
+      color: #999;
+      padding: 60px 20px 20px;
+      font-size: 14px;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-section h3 {
+      color: white;
+      margin-bottom: 16px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 12px;
+    }
+
+    .footer-section a {
+      color: #999;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      text-align: center;
     }
 
     /* CHATBOT STYLES */
@@ -139,54 +804,65 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
       border: none;
       color: white;
-      font-size: 28px;
+      font-size: 24px;
       cursor: pointer;
       z-index: 999;
-      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-      transition: all 0.2s;
+      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+      transition: all 0.3s ease;
     }
+
     #chat-button:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 16px rgba(255, 107, 53, 0.5);
+      box-shadow: 0 12px 32px rgba(255, 107, 53, 0.5);
     }
+
     #chat-widget {
       position: fixed;
       bottom: 90px;
       right: 20px;
       width: 380px;
       max-height: 500px;
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 12px;
+      background: white;
+      border-radius: 16px;
       display: none;
       flex-direction: column;
       z-index: 998;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--border);
     }
+
     #chat-widget.open {
       display: flex;
     }
+
     #chat-header {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
       color: white;
-      padding: 16px;
+      padding: 20px;
+      border-radius: 16px 16px 0 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-radius: 12px 12px 0 0;
       font-weight: 600;
     }
+
     #chat-close {
       background: none;
       border: none;
       color: white;
-      font-size: 20px;
+      font-size: 24px;
       cursor: pointer;
       padding: 0;
+      transition: all 0.3s ease;
     }
+
+    #chat-close:hover {
+      transform: rotate(90deg);
+    }
+
     #chat-messages {
       flex: 1;
       overflow-y: auto;
@@ -195,123 +871,499 @@
       flex-direction: column;
       gap: 12px;
     }
+
     .msg {
-      padding: 10px 12px;
-      border-radius: 8px;
-      max-width: 85%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      max-width: 90%;
       word-wrap: break-word;
       font-size: 14px;
+      line-height: 1.5;
+      animation: slideIn 0.3s ease;
     }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .msg.user {
       align-self: flex-end;
-      background: #ff6b35;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
       color: white;
     }
+
     .msg.bot {
       align-self: flex-start;
-      background: #2a2a2a;
-      color: #e0e0e0;
+      background: #f1f3f5;
+      color: var(--text);
     }
+
     #chat-input-area {
       display: flex;
       gap: 8px;
-      padding: 12px;
-      border-top: 1px solid #333;
+      padding: 16px;
+      border-top: 1px solid var(--border);
     }
+
     #chat-input {
       flex: 1;
-      background: #0f0f0f;
-      border: 1px solid #333;
-      color: #e0e0e0;
-      padding: 8px 12px;
-      border-radius: 6px;
+      background: #f8f9fa;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 8px;
       font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      transition: all 0.3s ease;
     }
+
+    #chat-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    }
+
     #chat-send {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c42 100%);
       color: white;
       border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
+      padding: 10px 18px;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
     }
+
     #chat-send:hover {
-      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 107, 53, 0.3);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .nav-menu {
+        gap: 4px;
+      }
+
+      .nav-menu a {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+
+      .hero-content,
+      .ai-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 16px;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .nav-cta {
+        margin-left: auto;
+      }
+
+      .btn-primary {
+        padding: 10px 20px;
+        font-size: 12px;
+      }
+
+      .hero {
+        margin-top: 70px;
+        padding: 40px 16px;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .hero-cta .btn-primary,
+      .hero-cta .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 28px;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #chat-widget {
+        width: calc(100vw - 40px);
+        right: 20px;
+        bottom: 80px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 28px;
+      }
+
+      .hero-text p {
+        font-size: 16px;
+      }
+
+      .section-header h2,
+      .about-content h2 {
+        font-size: 32px;
+      }
+
+      .final-cta-buttons {
+        flex-direction: column;
+      }
+
+      .final-cta-buttons a {
+        width: 100%;
+        text-align: center;
+      }
+
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
     <nav>
-      <div class="logo">CWG</div>
+      <div class="logo">Custom<span>Werks</span></div>
       <ul class="nav-menu">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#services">Apparel</a></li>
+        <li><a href="#services">Embroidery</a></li>
+        <li><a href="#solutions">Screen Printing</a></li>
+        <li><a href="#solutions">Promotional Products</a></li>
+        <li><a href="#catalog">Catalog</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="tel:423-756-1144">Contact</a></li>
       </ul>
+      <div class="nav-cta">
+        <a href="#final-cta" class="btn-primary">Start a Quote</a>
+        <a href="https://www.customwerks.net/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Catalog</a>
+      </div>
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Custom Promotional Products</h1>
-      <p>Screen printing, embroidery, and custom apparel for your brand</p>
-      <button class="btn" onclick="openChat()">Chat With Order Specialist</button>
+      <div class="hero-text">
+        <div class="hero-badge">✓ 38 YEARS IN BUSINESS</div>
+        <h1>Custom Apparel, Graphics & <span class="highlight">Branded Products</span> That Make Your Brand Stand Out</h1>
+        <p>For nearly four decades, Custom Werks Graphics has helped businesses, teams, schools, and organizations bring their brand to life through premium apparel, promotional products, signage, wraps, embroidery, and custom graphics.</p>
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="openChat()">Start a Quote</button>
+          <a href="https://www.customwerks.net/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Browse Catalog</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image">Branded Apparel Showcase</div>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="products">
-    <h2>What We Offer</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Custom Apparel</h3>
-        <p>T-shirts, hoodies, polos, and jackets with your logo or design</p>
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="trust-content">
+      <div class="trust-stat">
+        <div class="trust-stat-number">38+</div>
+        <div class="trust-stat-label">Years of Industry Experience</div>
       </div>
-      <div class="card">
-        <h3>Screen Printing</h3>
-        <p>High-quality screen printing for vibrant, lasting designs</p>
+      <div class="trust-stat">
+        <div class="trust-stat-number">1000s</div>
+        <div class="trust-stat-label">Satisfied Customers Nationwide</div>
       </div>
-      <div class="card">
+      <div class="trust-stat">
+        <div class="trust-stat-number">8</div>
+        <div class="trust-stat-label">Core Service Categories</div>
+      </div>
+      <div class="trust-stat">
+        <div class="trust-stat-number">24/7</div>
+        <div class="trust-stat-label">AI Assistant Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <h2>Our Core Services</h2>
+      <p>From branded apparel to vehicle wraps, we deliver premium solutions across a full range of custom graphics and promotional products.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">👕</div>
+        <h3>Branded Apparel</h3>
+        <p>Custom t-shirts, polos, hoodies, jackets, and uniforms with your logo or design.</p>
+        <a href="https://www.customwerks.net/" target="_blank">Explore →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧵</div>
         <h3>Embroidery</h3>
-        <p>Professional embroidery for premium look and feel</p>
+        <p>Professional embroidery for premium branded products with exceptional detail and durability.</p>
+        <a href="https://www.customwerks.net/" target="_blank">Explore →</a>
       </div>
-      <div class="card">
-        <h3>Promotional Items</h3>
-        <p>Branded bags, drinkware, hats, and more</p>
+      <div class="service-card">
+        <div class="service-icon">🖨️</div>
+        <h3>Screen Printing</h3>
+        <p>High-quality screen printing for vibrant, lasting designs on apparel and promotional items.</p>
+        <a href="https://www.customwerks.net/" target="_blank">Explore →</a>
       </div>
-      <div class="card">
-        <h3>Corporate Gifts</h3>
-        <p>Bulk orders for events, conferences, and corporate needs</p>
+      <div class="service-card">
+        <div class="service-icon">🎁</div>
+        <h3>Promotional Products</h3>
+        <p>Branded bags, drinkware, hats, writing instruments, office supplies, and more.</p>
+        <a href="https://www.customwerks.net/" target="_blank">Explore →</a>
       </div>
-      <div class="card">
-        <h3>Custom Design</h3>
-        <p>Our team helps bring your vision to life</p>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Signs & Banners</h3>
+        <p>Custom signage, banners, and displays that grab attention and build brand presence.</p>
+        <a href="https://www.customwerks.net/" target="_blank">Explore →</a>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="services">
-    <h2>Why Choose Us</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Quality</h3>
-        <p>Premium materials and expert craftsmanship</p>
-      </div>
-      <div class="card">
-        <h3>Speed</h3>
-        <p>Fast turnaround times without sacrificing quality</p>
-      </div>
-      <div class="card">
-        <h3>Expertise</h3>
-        <p>Over 20 years of experience in the industry</p>
+      <div class="service-card">
+        <div class="service-icon">🚐</div>
+        <h3>Vehicle Wraps & Graphics</h3>
+        <p>Eye-catching vehicle wraps, truck lettering, and custom graphics that turn heads.</p>
+        <a href="https://www.customwerks.net/" target="_blank">Explore →</a>
       </div>
     </div>
   </section>
 
-  <footer id="contact">
-    <p>&copy; 2026 Custom Werks Graphics. All rights reserved.</p>
-    <p>📞 (423) 756-1144 | 📧 sales@customwerks.net</p>
+  <!-- HOW IT WORKS -->
+  <section class="process">
+    <div class="section-header" style="margin-bottom: 60px;">
+      <h2>How It Works</h2>
+      <p>A simple, expert-guided process from idea to finished product.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Tell Us What You Need</h3>
+        <p>Share your project details, budget, and timeline with our team or AI assistant.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Upload Your Design</h3>
+        <p>Provide your logo, artwork, or idea. We'll help refine it if needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Expert Review</h3>
+        <p>Our specialists provide recommendations on production methods and materials.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Approve & Quote</h3>
+        <p>Get a detailed quote with timeline. Make revisions if needed before approval.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <h3>Production & Delivery</h3>
+        <p>We produce your order with quality-first processes and deliver on schedule.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS FOR DIFFERENT CUSTOMER TYPES -->
+  <section class="solutions" id="solutions">
+    <div class="section-header" style="margin-bottom: 60px;">
+      <h2>Who We Serve</h2>
+      <p>Custom Werks Graphics partners with businesses, organizations, and teams of all sizes.</p>
+    </div>
+    <div class="solutions-grid">
+      <div class="solution-item">
+        <h3>💼 Businesses</h3>
+      </div>
+      <div class="solution-item">
+        <h3>🎓 Schools</h3>
+      </div>
+      <div class="solution-item">
+        <h3>⚽ Sports Teams</h3>
+      </div>
+      <div class="solution-item">
+        <h3>🎉 Events</h3>
+      </div>
+      <div class="solution-item">
+        <h3>🔧 Contractors</h3>
+      </div>
+      <div class="solution-item">
+        <h3>❤️ Nonprofits</h3>
+      </div>
+      <div class="solution-item">
+        <h3>👔 Corporate Teams</h3>
+      </div>
+      <div class="solution-item">
+        <h3>🏘️ Local Orgs</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG SECTION -->
+  <section class="catalog-cta" id="catalog">
+    <div class="catalog-cta-content">
+      <h2>Browse Our Full Product Catalog</h2>
+      <p>Ready to explore thousands of branded products, apparel options, and customization possibilities? Our complete catalog features premium items across all categories—browse at your own pace, then come back and request a custom quote.</p>
+      <a href="https://www.customwerks.net/" target="_blank" rel="noopener noreferrer" class="catalog-link">Open Catalog in New Window →</a>
+    </div>
+  </section>
+
+  <!-- AI ASSISTANT SECTION -->
+  <section class="ai-section">
+    <div class="ai-content">
+      <div class="ai-image">AI Order Specialist Active</div>
+      <div class="ai-text">
+        <h2>Need Help 24/7?</h2>
+        <p>Our AI-powered Order Specialist is available around the clock to help you collect project details, answer questions, and get you started with a quote—even when our office is closed.</p>
+        <ul>
+          <li>Instant responses to your questions</li>
+          <li>Help defining your project needs</li>
+          <li>Lead capture to start your quote</li>
+          <li>Available 24/7, no waiting required</li>
+        </ul>
+        <button class="btn-primary" onclick="openChat()">Ask the AI Specialist</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO / VISUAL SHOWCASE -->
+  <section class="portfolio">
+    <div class="section-header" style="margin-bottom: 60px;">
+      <h2>Project Portfolio</h2>
+      <p>Examples of branded products, apparel, and graphics we've created for satisfied customers.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-item-label">Custom Polos</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-item-label">Team Uniforms</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-item-label">Embroidered Hats</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-item-label">Branded Bags</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-item-label">Vehicle Wrap</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-item-label">Event Merchandise</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2>38 Years of Excellence</h2>
+      <p>Since 1986, Custom Werks Graphics has been the go-to partner for businesses, schools, teams, and organizations across the Southeast and beyond. What started as a local screen printing shop has grown into a full-service custom graphics and branded products company.</p>
+      <p>Our longevity isn't just about years in business—it's about our commitment to quality, our deep understanding of the industry, and our genuine dedication to making our customers' brands shine.</p>
+      <p>When you partner with Custom Werks Graphics, you're working with experienced professionals who know apparel, understand production, care about your brand, and are invested in your success.</p>
+      <div class="experience-badge">38 Years Strong</div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="final-cta">
+    <div class="final-cta-content">
+      <h2>Ready to Bring Your Brand to Life?</h2>
+      <p>Whether you're building team uniforms, creating promotional products, outfitting your fleet, or launching a marketing campaign, Custom Werks Graphics has the experience, expertise, and passion to make it happen.</p>
+      <div class="final-cta-buttons">
+        <button class="btn-primary" onclick="openChat()">Start a Quote</button>
+        <a href="https://www.customwerks.net/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Browse Catalog</a>
+        <button class="btn-primary" onclick="openChat()">Ask the AI Assistant</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Custom Werks Graphics</h3>
+        <p style="margin-bottom: 16px; color: #999;">38 years of premium branded apparel and promotional products.</p>
+        <p><strong style="color: #fff;">📞 423.756.1144</strong><br>
+        <strong style="color: #fff;">📧 sales@customwerks.net</strong></p>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#services">Branded Apparel</a></li>
+          <li><a href="#services">Screen Printing</a></li>
+          <li><a href="#services">Embroidery</a></li>
+          <li><a href="#services">Promotional Products</a></li>
+          <li><a href="#services">Signs & Wraps</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="https://www.customwerks.net/" target="_blank">Full Catalog</a></li>
+          <li><a href="tel:423-756-1144">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#solutions">Who We Serve</a></li>
+          <li><a href="https://www.customwerks.net/" target="_blank">Shop Now</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Custom Werks Graphics. All rights reserved. | <a href="https://www.customwerks.net/" target="_blank" style="color: var(--primary);">Full Catalog</a></p>
+    </div>
   </footer>
 
   <!-- CHATBOT -->
@@ -360,6 +1412,24 @@
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
     }
 
+    async function sendLeadEmail() {
+      try {
+        const response = await fetch('/api/email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userInfo: userInfo,
+            conversation: messages
+          })
+        });
+        if (!response.ok) {
+          console.warn('Email send failed, but conversation continues');
+        }
+      } catch (error) {
+        console.warn('Email error:', error);
+      }
+    }
+
     async function callClaude(allMessages) {
       try {
         const response = await fetch('/api/chat', {
@@ -396,6 +1466,7 @@
         userInfo.phone = text;
         stage = 'order';
         addMessage('Perfect! Now let me help with your order.', false);
+        sendLeadEmail(); // Send email with lead info
         callClaude(messages);
       } else {
         callClaude(messages);
@@ -406,11 +1477,11 @@
       if (e.key === 'Enter') sendMessage();
     });
 
-    // Auto-open after 2 seconds
     setTimeout(() => {
       openChat();
       addMessage('Hi! What\'s your name? 👋', false);
     }, 2000);
   </script>
+
 </body>
 </html>
